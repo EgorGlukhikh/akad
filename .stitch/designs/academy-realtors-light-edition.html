@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Академия Риелторов - Мастерство в каждой сделке</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&amp;family=Newsreader:ital,wght@1,400;1,600&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#444657",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-high": "#e8e8e7",
+                      "inverse-surface": "#2f3130",
+                      "on-secondary-container": "#00723f",
+                      "primary": "#0030d0",
+                      "surface-tint": "#1643fd",
+                      "on-surface": "#1a1c1c",
+                      "on-secondary-fixed-variant": "#00522c",
+                      "tertiary": "#8d2000",
+                      "on-primary-fixed-variant": "#002eca",
+                      "secondary": "#006d3c",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#00105c",
+                      "on-secondary": "#ffffff",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface-bright": "#f9f9f8",
+                      "secondary-container": "#4dfd9d",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#ffb4a1",
+                      "primary-container": "#1b46ff",
+                      "surface": "#f9f9f8",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#f3f4f3",
+                      "on-tertiary-container": "#ffd2c7",
+                      "on-background": "#1a1c1c",
+                      "surface-variant": "#e2e2e2",
+                      "background": "#f9f9f8",
+                      "inverse-primary": "#bac3ff",
+                      "surface-container": "#eeeeed",
+                      "on-error": "#ffffff",
+                      "outline": "#747688",
+                      "tertiary-fixed": "#ffdbd2",
+                      "inverse-on-surface": "#f1f1f0",
+                      "secondary-fixed": "#5affa2",
+                      "on-secondary-fixed": "#00210e",
+                      "on-primary-container": "#d6daff",
+                      "outline-variant": "#c4c5da",
+                      "primary-fixed": "#dee0ff",
+                      "on-tertiary-fixed": "#3c0800",
+                      "on-tertiary-fixed-variant": "#891e00",
+                      "secondary-fixed-dim": "#22e286",
+                      "tertiary-container": "#b72c00",
+                      "surface-dim": "#dadad9",
+                      "primary-fixed-dim": "#bac3ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Work Sans"],
+                      "label": ["Newsreader"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scholar-grid {
+            background-image: linear-gradient(to right, #c4c5da 1px, transparent 1px),
+                              linear-gradient(to bottom, #c4c5da 1px, transparent 1px);
+            background-size: 80px 80px;
+            opacity: 0.05;
+        }
+        .editorial-shadow {
+            box-shadow: 0 40px 60px -5px rgba(26, 28, 28, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Grid Overlay -->
+<div class="fixed inset-0 scholar-grid pointer-events-none z-0"></div>
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 bg-[#F9F9F8] dark:bg-stone-900 border-b border-outline-variant/15 backdrop-blur-md">
+<div class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto w-full">
+<div class="text-2xl font-bold tracking-tight text-[#1A1C1C] dark:text-stone-100 font-['Space_Grotesk']">
+                Академия Риелторов
+            </div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="text-[#1B46FF] dark:text-blue-400 font-bold border-b-2 border-[#1B46FF] pb-1 transition-colors duration-300" href="#">Курсы</a>
+<a class="text-[#1A1C1C] dark:text-stone-400 font-medium hover:text-[#1B46FF] transition-colors duration-300" href="#">Программы</a>
+<a class="text-[#1A1C1C] dark:text-stone-400 font-medium hover:text-[#1B46FF] transition-colors duration-300" href="#">Об академии</a>
+</div>
+<button class="bg-primary-container text-on-primary font-medium px-6 py-2 rounded-lg scale-102 transition-transform duration-200">
+                Войти
+            </button>
+</div>
+</nav>
+<main class="relative z-10">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 py-24 grid md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-7">
+<span class="font-label italic text-primary-container text-xl block mb-4">Academy</span>
+<h1 class="font-headline text-7xl md:text-8xl leading-[0.95] tracking-tight mb-6">
+                    Мастерство в каждой сделке
+                </h1>
+<p class="font-label italic text-3xl text-outline mb-8">
+                    Архитектура вашего профессионального роста
+                </p>
+<p class="text-lg text-on-surface-variant max-w-lg mb-10 leading-relaxed">
+                    Премиальная образовательная экосистема для экспертов рынка недвижимости. Мы объединяем юридическую точность с современными технологиями продаж.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container text-on-primary px-8 py-4 rounded-md font-semibold text-lg hover:scale-[1.02] transition-transform">
+                        Начать обучение
+                    </button>
+<button class="bg-surface-container-lowest/60 backdrop-blur-md border border-outline-variant/30 px-8 py-4 rounded-md font-semibold text-lg hover:scale-[1.02] transition-transform">
+                        Смотреть курсы
+                    </button>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="bg-surface-container-low rounded-xl p-6 editorial-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-8">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-primary-container"></div>
+<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+</div>
+<span class="text-xs font-bold tracking-widest uppercase opacity-40">DASHBOARD_PREVIEW</span>
+</div>
+<div class="space-y-4">
+<div class="h-32 bg-primary-container rounded-lg p-4 flex flex-col justify-end">
+<div class="text-on-primary-container text-xs font-medium mb-1">Прогресс обучения</div>
+<div class="text-on-primary text-2xl font-headline">84% завершено</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-highest p-4 rounded-lg">
+<div class="text-[10px] uppercase tracking-wider mb-2 opacity-60">Сделки</div>
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold">12</span>
+<span class="w-2 h-2 rounded-full bg-[#00D97E]"></span>
+</div>
+</div>
+<div class="bg-surface-container-highest p-4 rounded-lg">
+<div class="text-[10px] uppercase tracking-wider mb-2 opacity-60">Рейтинг</div>
+<div class="text-xl font-bold">4.9</div>
+</div>
+</div>
+</div>
+<!-- Abstract Background Element -->
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl"></div>
+</div>
+</div>
+</section>
+<!-- Benefits Row -->
+<section class="bg-surface-container-low py-12">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">verified</span>
+<span class="font-medium tracking-tight">Практическое мастерство</span>
+</div>
+<div class="w-px h-8 bg-outline-variant/30 hidden md:block"></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">gavel</span>
+<span class="font-medium tracking-tight">Юридическая уверенность</span>
+</div>
+<div class="w-px h-8 bg-outline-variant/30 hidden md:block"></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">speed</span>
+<span class="font-medium tracking-tight">Ритм закрытия сделок</span>
+</div>
+</div>
+</section>
+<!-- Learning Structure -->
+<section class="max-w-7xl mx-auto px-8 py-32">
+<div class="mb-20">
+<span class="font-label italic text-primary-container text-lg block mb-2">Процесс</span>
+<h2 class="font-headline text-5xl md:text-6xl tracking-tight">Архитектура вашего пути</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="group">
+<div class="text-8xl font-headline text-outline-variant/20 mb-6 transition-colors group-hover:text-primary-container/20">01</div>
+<h3 class="text-2xl font-bold mb-4">Фундамент</h3>
+<p class="text-on-surface-variant leading-relaxed">Погружение в аналитику рынка, психологию клиента и архитектуру доверия.</p>
+</div>
+<div class="group">
+<div class="text-8xl font-headline text-outline-variant/20 mb-6 transition-colors group-hover:text-primary-container/20">02</div>
+<h3 class="text-2xl font-bold mb-4">Практика</h3>
+<p class="text-on-surface-variant leading-relaxed">Разбор реальных кейсов, отработка возражений и технология сложных переговоров.</p>
+</div>
+<div class="group">
+<div class="text-8xl font-headline text-outline-variant/20 mb-6 transition-colors group-hover:text-primary-container/20">03</div>
+<h3 class="text-2xl font-bold mb-4">Масштабирование</h3>
+<p class="text-on-surface-variant leading-relaxed">Создание личного бренда, автоматизация процессов и выход на элитный сегмент.</p>
+</div>
+</div>
+</section>
+<!-- Programs Section -->
+<section class="bg-surface-container-low py-32">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<span class="font-label italic text-primary-container text-lg block mb-2">Курсы</span>
+<h2 class="font-headline text-5xl md:text-6xl tracking-tight">Образовательные программы</h2>
+</div>
+<button class="text-primary-container font-bold flex items-center gap-2 group">
+                        Все программы 
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<!-- Course Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:scale-[1.01] transition-all duration-300">
+<div class="h-64 relative overflow-hidden">
+<img alt="Modern living room" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" data-alt="Modern minimalist luxury penthouse living room with floor to ceiling windows and soft daylight in architectural photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHeuxrrm9Ap2ePKJTfvtst11gILmDsyY9EuP3PP0O4pmgDqQ53mPgiuQmZpOITwa_sUUk1GiHk5_lRR3-Ox58JqYLjOQ2YtVJNGzG3ayqkXkvWKXNpq3jnbTqEOUCCx7B80r55gPDbdnxE8HSN8D-sD3W-Osp_i61hwKwE-6hIs52Yjco5sRufX-Emja2EsXxwOuGlTCf5irQ9X92DRiYt1KcopxobCB1rYZc4WLGUXoT9Uc9ZPa-bPnbyumHkqjSu_Uc24wyX5Puf"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Бестселлер</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-bold max-w-[70%]">Основы жилой недвижимости</h3>
+<span class="font-label italic text-xl text-primary-container">40 ч.</span>
+</div>
+<p class="text-on-surface-variant mb-8 line-clamp-2">Глубокое погружение в рынок жилья: от оценки ликвидности до стратегии маркетинга объектов.</p>
+<button class="w-full py-4 border border-outline-variant/30 rounded-md font-bold hover:bg-primary-container hover:text-on-primary transition-colors">
+                                Подробнее о курсе
+                            </button>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:scale-[1.01] transition-all duration-300">
+<div class="h-64 relative overflow-hidden">
+<img alt="Real estate documents" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" data-alt="Close up of high quality paper documents and fountain pen on a clean office desk with bright natural lighting and architectural aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3JA0Cf0-tTb_Uz47_YMeVTad4H6TvxbCRjidGcwjaL54ZUbEl9jcy3o1cZOBdoPkzaIluLI4ae_wojCSIdm5-8Yojd1WvlMOykXSV3hNFzIa_RKCZcWjDBi-BZxRj10eRj483HeNl9Ua8-ihpO7c5YAwS0Nh1XitES-LKTuacogxS5Ns6_x5fXChSvDusKnMy4Y37xrLoq1txQcIWDRJB2i7d-vrokcyB9TMMkATos4TmZARlfcqcW8SZ3swf9jojtzWDyJG-zNwX"/>
+<div class="absolute top-4 left-4">
+<span class="bg-[#00D97E]/20 text-secondary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Профи</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-bold max-w-[70%]">Юридическая чистота сделки</h3>
+<span class="font-label italic text-xl text-primary-container">56 ч.</span>
+</div>
+<p class="text-on-surface-variant mb-8 line-clamp-2">Комплексный анализ рисков, проверка правоустанавливающих документов и регламенты безопасности.</p>
+<button class="w-full py-4 border border-outline-variant/30 rounded-md font-bold hover:bg-primary-container hover:text-on-primary transition-colors">
+                                Подробнее о курсе
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Proof Section -->
+<section class="max-w-7xl mx-auto px-8 py-32 overflow-hidden">
+<div class="grid md:grid-cols-2 gap-24 items-center">
+<div>
+<span class="font-label italic text-primary-container text-lg block mb-2">Платформа</span>
+<h2 class="font-headline text-5xl md:text-6xl tracking-tight mb-8">Цифровая среда обучения</h2>
+<div class="space-y-12 mb-12">
+<div>
+<div class="text-6xl font-headline mb-2">2400+</div>
+<div class="text-on-surface-variant font-medium">Сертифицированных выпускников по всей стране</div>
+</div>
+<div>
+<div class="text-6xl font-headline mb-2">98%</div>
+<div class="text-on-surface-variant font-medium">Успешно закрытых первых сделок после курса</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<!-- Progress View Mockup -->
+<div class="bg-surface rounded-2xl border border-outline-variant/20 p-8 editorial-shadow relative z-20">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<div class="font-bold">Мой прогресс</div>
+<div class="text-xs text-outline">Модуль 4: Оценка активов</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span>Задания курса</span>
+<span class="font-bold">12/15</span>
+</div>
+<div class="h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[80%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00D97E]">check_circle</span>
+<span class="text-sm font-medium">Юридический тест пройден</span>
+</div>
+<span class="text-[10px] font-bold text-outline">ВЧЕРА</span>
+</div>
+</div>
+</div>
+<!-- Decorative shapes -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full blur-2xl z-10"></div>
+</div>
+</div>
+</section>
+<!-- Support Section -->
+<section class="bg-primary-container text-on-primary py-24">
+<div class="max-w-4xl mx-auto px-8 text-center">
+<h2 class="font-headline text-5xl md:text-6xl mb-8 leading-tight">Мы здесь, чтобы поддержать вас</h2>
+<p class="text-xl opacity-80 mb-12 font-label italic">Персональные консультации и кураторская поддержка на каждом этапе обучения.</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-surface text-primary px-10 py-5 rounded-md font-bold text-lg hover:scale-105 transition-transform">
+                        Записаться на консультацию
+                    </button>
+<button class="border border-on-primary/30 px-10 py-5 rounded-md font-bold text-lg hover:bg-on-primary/10 transition-colors">
+                        Задать вопрос в Telegram
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#F9F9F8] dark:bg-stone-900 border-t border-[#C4C5DA]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 max-w-7xl mx-auto w-full">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-bold text-[#1A1C1C] dark:text-stone-100 font-['Space_Grotesk'] mb-2">
+                    Академия Риелторов
+                </div>
+<div class="text-stone-500 dark:text-stone-500 text-sm tracking-wide font-['Work_Sans']">
+                    © 2024 Академия Риелторов. Все права защищены.
+                </div>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-stone-500 dark:text-stone-500 text-sm hover:text-[#1B46FF] transition-colors" href="#">Политика конфиденциальности</a>
+<a class="text-stone-500 dark:text-stone-500 text-sm hover:text-[#1B46FF] transition-colors" href="#">Условия использования</a>
+<a class="text-stone-500 dark:text-stone-500 text-sm hover:text-[#1B46FF] transition-colors" href="#">Оферта</a>
+<a class="text-stone-500 dark:text-stone-500 text-sm hover:text-[#1B46FF] transition-colors" href="#">Контакты</a>
+</div>
+</div>
+</footer>
+</body></html>

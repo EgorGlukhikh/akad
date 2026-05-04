@@ -1,0 +1,37 @@
+- main [ref=e2]:
+  - region "Брендовая зона" [ref=e3]:
+    - link "Академия риэлторов" [ref=e4] [cursor=pointer]:
+      - /url: ../index.html
+      - generic [ref=e5]: АР
+      - generic [ref=e6]:
+        - strong [ref=e7]: Академия
+        - generic [ref=e8]: риэлторов
+  - generic [ref=e11]:
+    - generic [ref=e12]:
+      - generic [ref=e13]: Вход в личный кабинет
+      - heading "Вход в обучающую платформу" [level=1] [ref=e14]
+      - paragraph [ref=e15]: Введите телефон и пароль, чтобы открыть курсы, материалы и свой прогресс по обучению.
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: Телефон
+        - textbox "Телефон" [ref=e20]:
+          - /placeholder: +7 (___) ___-__-__
+      - generic [ref=e21]:
+        - generic [ref=e22]: Пароль
+        - generic [ref=e23]:
+          - textbox "Пароль Показать пароль" [ref=e24]:
+            - /placeholder: Введите пароль
+          - button "Показать пароль" [ref=e25]:
+            - img [ref=e26]
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - checkbox "Запомнить меня"
+          - generic [ref=e32]: Запомнить меня
+        - link "Забыли пароль?" [ref=e33] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e34]:
+        - button "Далее" [ref=e35] [cursor=pointer]
+        - link "Перейти в админку курсов" [ref=e36] [cursor=pointer]:
+          - /url: ../admin/courses/index.html
+        - link "Вернуться на лендинг" [ref=e37] [cursor=pointer]:
+          - /url: ../index.html

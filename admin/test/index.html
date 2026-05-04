@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Редактор теста — Админка Academy Realtors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/styles/system.css">
+  <link rel="stylesheet" href="../../assets/styles/admin.css">
+</head>
+<body class="admin-page" data-grid="light">
+  <header class="admin-topbar">
+    <div class="admin-shell admin-topbar__inner">
+      <div class="admin-topbar__meta">
+        <a class="brand" href="../../index.html" aria-label="Академия риэлторов">
+          <span class="brand-mark">АР</span>
+          <span class="brand-copy">
+            <strong>Академия</strong>
+            <span>риэлторов</span>
+          </span>
+        </a>
+        <nav class="admin-breadcrumbs" aria-label="Навигация админки">
+          <a href="../course/index.html">Создание курса</a>
+          <span>/</span>
+          <span class="admin-breadcrumbs__current" data-test-breadcrumb-title>Тест</span>
+        </nav>
+      </div>
+      <div class="admin-actions">
+        <button class="button button-outline" type="button" data-preview-test>Предпросмотр</button>
+        <button class="button button-dark" type="button" data-save-test>Сохранить</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-shell">
+    <section class="lesson-stage">
+      <div class="lesson-stage__head">
+        <div class="lesson-stage__meta">
+          <span class="lesson-step">Тест</span>
+          <span>/</span>
+          <span data-test-section>Курс</span>
+        </div>
+        <input class="lesson-title-input" type="text" value="Тест" data-test-title>
+      </div>
+
+      <div class="lesson-canvas">
+        <div class="content-toolbar-wrap">
+          <div class="content-toolbar" aria-label="Палитра вопросов теста">
+            <button class="button button-outline admin-entity-button" type="button" data-add-question="single">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="2"/><path d="m9 12 2 2 4-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+              <span>Один ответ</span>
+            </button>
+            <button class="button button-outline admin-entity-button" type="button" data-add-question="multiple">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 7h4v4H5zM5 15h4v4H5zM13 8h6M13 16h6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+              <span>Несколько ответов</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="empty-state" data-empty-state>
+          <div>
+            <strong>Соберите тест</strong>
+            <div>Добавьте вопросы, варианты ответов и отметьте правильные варианты.</div>
+          </div>
+        </div>
+
+        <div class="content-blocks" data-questions-root></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../../assets/scripts/course-store.js"></script>
+  <script src="../../assets/scripts/admin-test.js"></script>
+</body>
+</html>

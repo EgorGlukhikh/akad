@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#565d5f",
+                    "inverse-on-surface": "#51555d",
+                    "surface-container-low": "#0e141c",
+                    "inverse-primary": "#006976",
+                    "inverse-surface": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#5c6869",
+                    "tertiary-fixed": "#e9f6f7",
+                    "surface-variant": "#1a2637",
+                    "surface-container-high": "#16202e",
+                    "on-primary": "#004750",
+                    "on-secondary-container": "#b9c0c3",
+                    "secondary-dim": "#989fa1",
+                    "on-background": "#d9e6fd",
+                    "surface-tint": "#00daf3",
+                    "primary-fixed-dim": "#49e7ff",
+                    "primary-container": "#004f58",
+                    "tertiary-fixed-dim": "#dae8e9",
+                    "secondary": "#989fa1",
+                    "error-container": "#7f2927",
+                    "on-error": "#490106",
+                    "outline": "#6a768a",
+                    "on-secondary-fixed": "#394043",
+                    "tertiary-dim": "#e0eeee",
+                    "primary-dim": "#00cbe2",
+                    "error": "#ee7d77",
+                    "secondary-fixed-dim": "#cfd6d8",
+                    "secondary-container": "#363d3f",
+                    "on-secondary": "#1a2123",
+                    "tertiary-container": "#e0eeee",
+                    "surface": "#0a0e14",
+                    "background": "#0a0e14",
+                    "error-dim": "#bb5551",
+                    "primary": "#00daf3",
+                    "tertiary": "#eefcfd",
+                    "surface-container-highest": "#1a2637",
+                    "on-primary-container": "#00e5ff",
+                    "secondary-fixed": "#dde4e6",
+                    "primary-fixed": "#9cf0ff",
+                    "surface-dim": "#0a0e14",
+                    "on-surface": "#d9e6fd",
+                    "on-tertiary-container": "#4c595a",
+                    "on-surface-variant": "#9facc1",
+                    "on-tertiary": "#556162",
+                    "on-error-container": "#ff9993",
+                    "surface-container-lowest": "#000000",
+                    "on-tertiary-fixed": "#3f4c4d",
+                    "on-primary-fixed": "#00464f",
+                    "surface-container": "#121a25",
+                    "surface-bright": "#1e2d41",
+                    "on-primary-fixed-variant": "#006571",
+                    "outline-variant": "#3c495b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0",
+                    "lg": "0",
+                    "xl": "0",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #0a0e14; color: #d9e6fd; font-family: 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; font-size: 20px; }
+        .sharp-edge { border-radius: 0 !important; }
+    </style>
+</head>
+<body class="bg-background selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 bg-[#0a0e14]/70 backdrop-blur-3xl">
+<div class="text-xl font-black tracking-tighter text-[#d9e6fd]">ACADEMY REALTORS</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="font-['Manrope'] uppercase tracking-[0.1em] text-[10px] font-bold text-[#9facc1] hover:text-[#00daf3] transition-colors duration-300" href="#">COURSES</a>
+<a class="font-['Manrope'] uppercase tracking-[0.1em] text-[10px] font-bold text-[#9facc1] hover:text-[#00daf3] transition-colors duration-300" href="#">PROGRAMS</a>
+<a class="font-['Manrope'] uppercase tracking-[0.1em] text-[10px] font-bold text-[#9facc1] hover:text-[#00daf3] transition-colors duration-300" href="#">ABOUT</a>
+<a class="font-['Manrope'] uppercase tracking-[0.1em] text-[10px] font-bold text-[#9facc1] hover:text-[#00daf3] transition-colors duration-300" href="#">SUPPORT</a>
+</div>
+<button class="bg-[#00daf3] text-[#004750] px-8 py-2 font-['Manrope'] uppercase tracking-[0.1em] text-[10px] font-bold active:scale-95 duration-150 sharp-edge">APPLY</button>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col md:flex-row items-center px-12 gap-16 lg:gap-24 overflow-hidden">
+<div class="w-full md:w-1/2 flex flex-col gap-8">
+<div class="flex items-center gap-4">
+<span class="text-primary-dim uppercase tracking-[0.2em] text-[11px] font-black">ACADEMY</span>
+<div class="h-[1px] w-12 bg-outline-variant/30"></div>
+</div>
+<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter leading-[0.95] text-on-surface">
+                    Ваше мастерство в каждой сделке.
+                </h1>
+<p class="text-secondary italic text-xl lg:text-2xl font-light">
+                    Архитектура вашего профессионального роста
+                </p>
+<p class="text-on-surface-variant max-w-md leading-relaxed">
+                    Премиальное образование для тех, кто строит карьеру на фундаменте юридической точности и архитектурного видения рынка.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-on-primary px-10 py-4 font-bold tracking-widest text-[10px] uppercase sharp-edge hover:bg-on-primary-container transition-all">
+                        НАЧАТЬ ОБУЧЕНИЕ
+                    </button>
+<button class="border border-outline-variant/30 text-on-surface px-10 py-4 font-bold tracking-widest text-[10px] uppercase sharp-edge hover:border-primary transition-all">
+                        КАТАЛОГ КУРСОВ
+                    </button>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative h-[600px] lg:h-[800px]">
+<div class="absolute inset-0 bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-60 mix-blend-luminosity" data-alt="monochrome high-angle shot of a brutalist concrete skyscraper with sharp geometric shadows and high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtyPLOf-qXsl6z_tFv1H7WRUszzAc7aAbLFxIMP9YUF7uGIAUpT7XDYHE6Pl4eD1topvLVbOyiWTGexAIM5_rI31HtsU_EXQZZZoWGtXNKWBGFh8mRq28f-TjeS7nXxfTwVLlAFZgCuA7VCN-yX9GlcRTf9BbBYOfyjduMJzRNl-HwksEJTcuWfqNnFcZIzlK4L1JtJaILTZvUj2sIMkNKwVx-u8DdR3_nsjGbn2_2cL7y_yuI9L5sCujV2WTbHrmDpW2j4N13Uxbk"/>
+</div>
+<!-- Cyan Metric Card -->
+<div class="absolute -left-8 top-1/4 bg-primary px-8 py-10 sharp-edge flex flex-col gap-2 shadow-2xl">
+<span class="text-on-primary text-4xl font-black tracking-tighter">12+</span>
+<span class="text-on-primary uppercase text-[10px] font-bold tracking-widest leading-tight">Программ<br/>обучения</span>
+</div>
+<div class="absolute bottom-0 right-0 w-1/2 h-[1px] bg-primary/40"></div>
+</div>
+</section>
+<!-- Values Section -->
+<section class="py-32 px-12 bg-surface-container-low">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
+<div class="flex flex-col gap-6">
+<span class="material-symbols-outlined text-primary" data-icon="architecture">architecture</span>
+<h3 class="text-xl font-bold tracking-tight uppercase">Практическое мастерство</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Реальные кейсы от экспертов рынка, направленные на оттачивание навыков переговоров и закрытия.</p>
+</div>
+<div class="flex flex-col gap-6">
+<span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
+<h3 class="text-xl font-bold tracking-tight uppercase">Юридическая уверенность</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Глубокое погружение в правовые аспекты сделок любой сложности с жилой и коммерческой недвижимостью.</p>
+</div>
+<div class="flex flex-col gap-6">
+<span class="material-symbols-outlined text-primary" data-icon="speed">speed</span>
+<h3 class="text-xl font-bold tracking-tight uppercase">Ритм закрытия сделок</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Методологии ускорения операционного цикла и автоматизации рутинных процессов риелтора.</p>
+</div>
+</div>
+</section>
+<!-- Path Section -->
+<section class="py-32 px-12">
+<div class="mb-24 flex flex-col items-start gap-4">
+<span class="text-secondary italic text-lg">Process</span>
+<h2 class="text-4xl lg:text-5xl font-black uppercase tracking-tighter">Архитектура вашего пути</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group">
+<div class="text-6xl font-black text-surface-container-high group-hover:text-primary transition-colors duration-500 mb-6 tracking-tighter">01</div>
+<div class="w-full h-[2px] bg-surface-container-high mb-8">
+<div class="h-full bg-primary w-1/3"></div>
+</div>
+<h4 class="text-lg font-bold mb-4 uppercase">Диагностика</h4>
+<p class="text-on-surface-variant text-sm">Определение текущего уровня компетенций и выбор оптимального вектора развития.</p>
+</div>
+<div class="group">
+<div class="text-6xl font-black text-surface-container-high group-hover:text-primary transition-colors duration-500 mb-6 tracking-tighter">02</div>
+<div class="w-full h-[2px] bg-surface-container-high mb-8">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+<h4 class="text-lg font-bold mb-4 uppercase">Погружение</h4>
+<p class="text-on-surface-variant text-sm">Интенсивная практика и теоретический блок под руководством менторов индустрии.</p>
+</div>
+<div class="group">
+<div class="text-6xl font-black text-surface-container-high group-hover:text-primary transition-colors duration-500 mb-6 tracking-tighter">03</div>
+<div class="w-full h-[2px] bg-surface-container-high mb-8">
+<div class="h-full bg-primary w-full"></div>
+</div>
+<h4 class="text-lg font-bold mb-4 uppercase">Сертификация</h4>
+<p class="text-on-surface-variant text-sm">Подтверждение квалификации и доступ к закрытому сообществу выпускников Академии.</p>
+</div>
+</div>
+</section>
+<!-- Current Programs -->
+<section class="py-32 px-12 bg-surface-container-lowest">
+<div class="flex justify-between items-end mb-16">
+<h2 class="text-3xl font-bold uppercase tracking-tighter">Актуальные программы</h2>
+<div class="h-[1px] flex-grow mx-12 bg-outline-variant/15 hidden md:block"></div>
+<a class="text-primary text-[10px] font-bold uppercase tracking-widest border-b border-primary pb-1 hover:text-on-surface transition-colors" href="#">Смотреть все</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/10">
+<!-- Program Card 1 -->
+<div class="bg-surface group relative overflow-hidden h-[500px]">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-primary/10 transition-colors duration-500 z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" data-alt="dramatic wide shot of a modern glass and steel apartment complex in monochrome with deep contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ6GxYRmrViJ09TDIrE0SPXPBP-ePVyk3Z7L92cK5PB0N-owcDcEZPU7tb8p9c3sPKKP1jS2hmyShmwZLgSaY4V28pOpteW7Hmlza1FOSJ3OUT7FXr7fIty0yVOlaw7UCSlneupxogY-WRGqycETA7rQ5vsougx8k9Eh8i1TWqN-4MDRSPsfLmwx_cNIWDM9wKj-GORPgzFi_gqW7ijNLjmWoa7LuR6rIkoI2w_3Tk-8UEUMfYvgww0idHVFWRnmmQCtqaKQ7JBFX3"/>
+<div class="absolute bottom-0 left-0 p-12 z-20 w-full">
+<span class="text-primary-dim text-[10px] font-bold tracking-[0.2em] uppercase mb-4 block">Basic Course</span>
+<h3 class="text-3xl font-black text-white leading-none uppercase mb-8">Основы жилой недвижимости</h3>
+<button class="bg-white/10 backdrop-blur-md text-white text-[10px] font-bold px-8 py-3 sharp-edge border border-white/20 hover:bg-primary hover:text-on-primary transition-all uppercase tracking-widest">Подробнее</button>
+</div>
+</div>
+<!-- Program Card 2 -->
+<div class="bg-surface group relative overflow-hidden h-[500px]">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-primary/10 transition-colors duration-500 z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" data-alt="interior shot of a minimalist luxury office space with clean lines and architectural lighting in monochrome" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEoKVG2WTtnHVhuNXOSPUeTjb4oIQ3Sdc-FMfUiK-MtetjsFHb-Mfh5gybqmIso6Hl0w5stTOuNhmQXhfnVJq043-eClL-OpmvmRGIvfCKEePixPVPJ4SMAw6mcsA7t5aZ-xafdppEkvaE4N2Els3mW636E8E-f2SkI4XTo5ogTJ6pZMonA51LmNb5xKzdw9EaHWXj1pibo7oB29q2rPNnkH-xA78lK8op3-cnasTk5aVlhqUj0EsPzeqoxjg_128PXAGnq_ttAxA2"/>
+<div class="absolute bottom-0 left-0 p-12 z-20 w-full">
+<span class="text-primary-dim text-[10px] font-bold tracking-[0.2em] uppercase mb-4 block">Advanced Law</span>
+<h3 class="text-3xl font-black text-white leading-none uppercase mb-8">Юридическая чистота сделки</h3>
+<button class="bg-white/10 backdrop-blur-md text-white text-[10px] font-bold px-8 py-3 sharp-edge border border-white/20 hover:bg-primary hover:text-on-primary transition-all uppercase tracking-widest">Подробнее</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="py-48 px-12 text-center bg-surface relative overflow-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-primary/40"></div>
+<div class="max-w-3xl mx-auto flex flex-col items-center gap-8">
+<h2 class="text-4xl lg:text-6xl font-black tracking-tighter uppercase text-on-surface">Мы здесь, чтобы поддержать вас</h2>
+<p class="text-secondary italic text-lg lg:text-xl">Ваш успех — это структурное преимущество рынка.</p>
+<div class="mt-8">
+<button class="text-primary text-[10px] font-black uppercase tracking-[0.3em] flex items-center gap-4 group">
+<span class="h-[1px] w-8 bg-primary/50 group-hover:w-12 transition-all"></span>
+                        ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ
+                        <span class="h-[1px] w-8 bg-primary/50 group-hover:w-12 transition-all"></span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-12 py-16 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-[#3c495b]/15 bg-[#000000]">
+<div class="text-lg font-bold text-[#d9e6fd]">ACADEMY REALTORS</div>
+<div class="font-['Manrope'] uppercase tracking-[0.1em] text-[9px] font-medium leading-relaxed text-[#9facc1]">
+            © 2024 ACADEMY REALTORS. ARCHITECTURAL AUTHORITY.
+        </div>
+<div class="flex gap-8">
+<a class="font-['Manrope'] uppercase tracking-[0.1em] text-[9px] font-medium leading-relaxed text-[#9facc1] hover:text-[#d9e6fd] transition-colors" href="#">TERMS</a>
+<a class="font-['Manrope'] uppercase tracking-[0.1em] text-[9px] font-medium leading-relaxed text-[#9facc1] hover:text-[#d9e6fd] transition-colors" href="#">PRIVACY</a>
+<a class="font-['Manrope'] uppercase tracking-[0.1em] text-[9px] font-medium leading-relaxed text-[#9facc1] hover:text-[#d9e6fd] transition-colors" href="#">INSTAGRAM</a>
+<a class="font-['Manrope'] uppercase tracking-[0.1em] text-[9px] font-medium leading-relaxed text-[#9facc1] hover:text-[#d9e6fd] transition-colors" href="#">LINKEDIN</a>
+</div>
+</footer>
+</body></html>

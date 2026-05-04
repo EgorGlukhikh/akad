@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academy Realtors — Concept 1 Hyper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fcfcff;
+      --paper: rgba(255, 255, 255, 0.9);
+      --text: #0d1020;
+      --muted: #687089;
+      --line: rgba(13, 16, 32, 0.08);
+      --violet: #7d39eb;
+      --violet-deep: #5020bc;
+      --lime: #c6ff33;
+      --lime-deep: #b6f100;
+      --shell: min(1240px, calc(100vw - 40px));
+      --shadow: 0 30px 90px rgba(71, 34, 159, 0.14);
+      --radius: 30px;
+      --transition: 220ms ease;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(125, 57, 235, 0.14), transparent 22rem),
+        radial-gradient(circle at 78% 18%, rgba(198, 255, 51, 0.14), transparent 14rem),
+        linear-gradient(180deg, #fcfcff 0%, #f7f8ff 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background-image:
+        linear-gradient(to right, rgba(13, 16, 32, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(13, 16, 32, 0.045) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.8), transparent 18rem),
+        radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.45), transparent 16rem);
+      pointer-events: none;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .shell { width: var(--shell); margin: 0 auto; }
+    .scroll-progress { position: fixed; inset: 0 0 auto; z-index: 60; height: 5px; background: rgba(198, 255, 51, 0.14); }
+    .scroll-progress__bar { height: 100%; width: 0; background: linear-gradient(90deg, #e7ff8d, var(--lime) 50%, #9fe100); box-shadow: 0 0 28px rgba(198, 255, 51, 0.6); }
+    header { position: sticky; top: 0; z-index: 40; padding-top: 18px; backdrop-filter: blur(14px); }
+    .nav {
+      display: grid; grid-template-columns: auto 1fr auto; gap: 18px; align-items: center;
+      padding: 14px 18px; border: 1px solid rgba(255, 255, 255, 0.96); border-radius: 999px;
+      background: rgba(255, 255, 255, 0.82); box-shadow: 0 18px 50px rgba(13, 16, 32, 0.07);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -0.03em; white-space: nowrap; }
+    .brand-mark {
+      width: 48px; height: 48px; border-radius: 16px; display: grid; place-items: center;
+      color: #fff; font-weight: 900; background: linear-gradient(135deg, #111 0%, var(--violet) 68%, #9e77ff 100%);
+      box-shadow: 0 16px 34px rgba(80, 32, 188, 0.24);
+    }
+    .brand-copy { display: grid; gap: 1px; line-height: 1; }
+    .brand-copy strong, .brand-copy span { display: block; }
+    .brand-copy strong, .brand-copy span { font-size: 17px; font-weight: 800; letter-spacing: -0.03em; }
+    .nav-links, .nav-actions, .hero-actions, .cta-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .nav-links { justify-content: center; min-width: 0; }
+    .nav-links a {
+      min-height: 42px; padding: 0 16px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; line-height: 1;
+      color: var(--muted); font-size: 14px; font-weight: 600;
+      transition: background-color var(--transition), color var(--transition), transform var(--transition);
+    }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--text); background: rgba(125, 57, 235, 0.08); transform: translateY(-1px); outline: none; }
+    .button {
+      min-height: 48px; padding: 0 18px; border-radius: 999px; border: 1px solid transparent; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-size: 14px; font-weight: 700; transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), border-color var(--transition);
+      touch-action: manipulation;
+    }
+    .button:hover, .button:focus-visible { transform: translateY(-2px); outline: none; }
+    .button-outline { color: var(--text); border-color: var(--line); background: rgba(255, 255, 255, 0.92); }
+    .button-fill { color: #08100a; background: linear-gradient(135deg, #edffac 0%, var(--lime) 45%, var(--lime-deep) 100%); box-shadow: 0 18px 34px rgba(182, 241, 0, 0.22); }
+    .button-dark { color: #fff; background: linear-gradient(135deg, #111 0%, var(--violet) 68%, #8a5dfd 100%); box-shadow: 0 18px 34px rgba(80, 32, 188, 0.22); }
+    main { padding-bottom: 56px; }
+    .hero { position: relative; display: grid; grid-template-columns: minmax(0, 1.06fr) 420px; gap: 34px; align-items: center; padding: 58px 0 28px; }
+    .hero-copy { position: relative; z-index: 2; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
+    .eyebrow-mark { width: 34px; height: 34px; border-radius: 999px; display: grid; place-items: center; background: rgba(255,255,255,0.9); border: 1px solid var(--line); color: var(--text); }
+    .hero h1 { margin: 18px 0 0; max-width: 8.8ch; font-size: clamp(48px, 5.8vw, 82px); line-height: 0.97; letter-spacing: -0.065em; font-weight: 900; text-wrap: balance; }
+    .hero-kicker { margin: 18px 0 0; max-width: 34rem; color: #626b86; font: italic 500 clamp(26px, 2.8vw, 38px) / 1.04 "Cormorant Garamond", serif; text-wrap: pretty; }
+    .lead { margin: 22px 0 0; max-width: 40rem; color: var(--muted); line-height: 1.72; font-size: 17px; text-wrap: pretty; }
+    .hero-actions { margin-top: 24px; }
+    .signal-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .signal-grid--full { margin-top: 12px; }
+    .signal { padding: 18px; border-radius: 24px; border: 1px solid var(--line); background: rgba(255,255,255,0.92); box-shadow: 0 16px 40px rgba(13, 16, 32, 0.05); }
+    .signal-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .icon-chip { width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center; background: linear-gradient(135deg, #f2edff, #ffffff); border: 1px solid rgba(125, 57, 235, 0.08); }
+    .icon-chip svg { width: 18px; height: 18px; color: var(--violet); }
+    .signal strong { display: block; font-size: 17px; line-height: 1.15; letter-spacing: -0.03em; }
+    .signal p { margin: 0; color: var(--muted); line-height: 1.58; font-size: 14px; }
+    .hero-panel { position: relative; overflow: hidden; padding: 18px; border-radius: 34px; color: #fff; background: linear-gradient(160deg, #151126 0%, var(--violet) 50%, #8d63ff 100%); box-shadow: var(--shadow); }
+    .hero-panel::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 18% 18%, rgba(255,255,255,0.18), transparent 8rem), radial-gradient(circle at 88% 16%, rgba(198,255,51,0.26), transparent 10rem), linear-gradient(180deg, rgba(255,255,255,0.06), transparent 24rem); pointer-events: none; }
+    .hero-panel > * { position: relative; z-index: 1; }
+    .panel-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { min-height: 34px; padding: 0 12px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 12px; font-weight: 800; letter-spacing: 0.02em; }
+    .tag.live { color: #0d1020; background: var(--lime); }
+    .tag.soft { color: rgba(255,255,255,0.92); background: rgba(255,255,255,0.14); }
+    .panel-card, .program-card, .cta-panel { border-radius: 26px; overflow: hidden; }
+    .panel-card { padding: 18px; background: rgba(255,255,255,0.96); color: var(--text); }
+    .panel-card h2 { margin: 10px 0 0; font-size: 36px; line-height: 0.96; letter-spacing: -0.05em; }
+    .panel-label { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #767c90; }
+    .progress-track { height: 8px; margin-top: 14px; border-radius: 999px; overflow: hidden; background: rgba(13,16,32,0.08); }
+    .progress-track span { display: block; width: 31%; height: 100%; background: linear-gradient(90deg, var(--lime), #a8e400); }
+    .panel-metrics { margin-top: 14px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .metric { padding: 16px; border-radius: 22px; background: rgba(255,255,255,0.12); backdrop-filter: blur(10px); }
+    .metric strong { display: block; font-size: 28px; letter-spacing: -0.05em; }
+    .metric span { color: rgba(255,255,255,0.78); font-size: 13px; line-height: 1.4; }
+    section { padding: 38px 0; }
+    .section-head { display: grid; grid-template-columns: 330px 1fr; gap: 28px; align-items: start; }
+    .section-title { margin: 14px 0 0; max-width: 10ch; font-size: clamp(32px, 3.5vw, 52px); line-height: 0.98; letter-spacing: -0.055em; font-weight: 800; text-wrap: balance; }
+    .section-copy { color: var(--muted); line-height: 1.72; max-width: 46rem; text-wrap: pretty; }
+    .feature-grid, .program-grid { display: grid; gap: 14px; }
+    .feature-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 22px; }
+    .program-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 22px; }
+    .feature-card, .program-card {
+      padding: 20px; border-radius: 28px; border: 1px solid var(--line); background: rgba(255,255,255,0.94); box-shadow: 0 18px 38px rgba(13,16,32,0.05);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .feature-card:hover, .program-card:hover { transform: translateY(-4px); box-shadow: 0 26px 48px rgba(13,16,32,0.08); border-color: rgba(125, 57, 235, 0.16); }
+    .feature-card h3, .program-card h3 { margin: 14px 0 10px; font-size: 24px; line-height: 1; letter-spacing: -0.05em; }
+    .feature-card p, .program-card p { margin: 0; color: var(--muted); line-height: 1.66; text-wrap: pretty; }
+    .topics-wrap { margin-top: 22px; padding: 18px; border-radius: 30px; border: 1px solid var(--line); background: rgba(255,255,255,0.78); backdrop-filter: blur(14px); box-shadow: 0 18px 40px rgba(13,16,32,0.05); }
+    .topics-cloud { display: flex; flex-wrap: wrap; gap: 12px; animation: drift 16s linear infinite alternate; }
+    .topic {
+      min-height: 48px; padding: 0 16px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 14px; font-weight: 700;
+      border: 1px solid var(--line); background: rgba(255,255,255,0.92); transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .topic:hover { transform: translateY(-2px); box-shadow: 0 16px 24px rgba(13,16,32,0.06); }
+    .topic.accent { border-color: transparent; color: #08100a; background: linear-gradient(135deg, var(--lime), #deff81); }
+    .topic.dark { border-color: transparent; color: #fff; background: linear-gradient(135deg, #111, var(--violet)); }
+    .program-card--featured { color: #fff; border-color: transparent; background: linear-gradient(145deg, #151126 0%, var(--violet) 58%, #8d63ff 100%); box-shadow: var(--shadow); }
+    .program-card--featured p { color: rgba(255,255,255,0.82); }
+    .program-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 13px; font-weight: 700; }
+    .program-card--featured .program-meta { color: rgba(255,255,255,0.76); }
+    .cta-band {
+      margin-top: 8px; display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 22px; padding: 26px; border-radius: 34px; color: #fff;
+      background: linear-gradient(145deg, #171129 0%, var(--violet) 56%, #8f65ff 100%); box-shadow: var(--shadow);
+    }
+    .cta-band h2 { margin: 12px 0 0; max-width: 11ch; font-size: clamp(34px, 4vw, 58px); line-height: 0.98; letter-spacing: -0.055em; font-weight: 800; text-wrap: balance; }
+    .cta-band p { color: rgba(255,255,255,0.8); max-width: 38rem; line-height: 1.72; text-wrap: pretty; }
+    .cta-panel { padding: 18px; background: rgba(255,255,255,0.12); backdrop-filter: blur(12px); display: grid; gap: 12px; align-content: start; }
+    .cta-item { padding: 14px 16px; border-radius: 22px; background: rgba(255,255,255,0.1); display: grid; gap: 4px; }
+    .cta-item strong { font-size: 16px; }
+    .cta-item span { color: rgba(255,255,255,0.72); font-size: 14px; line-height: 1.45; }
+    footer { padding: 28px 0 44px; color: var(--muted); font-size: 14px; }
+    .modal { position: fixed; inset: 0; z-index: 80; display: none; place-items: center; padding: 20px; }
+    .modal.open { display: grid; }
+    .modal-backdrop { position: absolute; inset: 0; background: rgba(8,10,18,0.52); backdrop-filter: blur(10px); }
+    .modal-card {
+      position: relative; z-index: 1; width: min(100%, 560px); padding: 24px; border-radius: 34px;
+      background: radial-gradient(circle at 80% 16%, rgba(198,255,51,0.34), transparent 9rem), linear-gradient(150deg, #ffffff 0%, #f7f0ff 58%, #efe3ff 100%);
+      box-shadow: 0 40px 100px rgba(30,12,82,0.3);
+    }
+    .modal-card h3 { margin: 12px 0 0; max-width: 12ch; font-size: clamp(28px, 3.8vw, 42px); line-height: 1; letter-spacing: -0.05em; text-wrap: balance; }
+    .modal-card p { color: var(--muted); line-height: 1.7; text-wrap: pretty; }
+    .modal-card .hero-actions { margin-top: 18px; }
+    .close-button { position: absolute; top: 14px; right: 14px; width: 42px; height: 42px; border: 0; border-radius: 50%; cursor: pointer; color: var(--violet); background: rgba(125,57,235,0.08); }
+    .skip-link { position: absolute; left: 12px; top: -42px; z-index: 100; padding: 10px 14px; border-radius: 12px; color: #fff; background: #111; }
+    .skip-link:focus { top: 12px; }
+    @keyframes drift { from { transform: translateX(0); } to { transform: translateX(14px); } }
+    @media (max-width: 1100px) {
+      .hero, .section-head, .cta-band { grid-template-columns: 1fr; }
+      .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .program-grid { grid-template-columns: 1fr; }
+      .hero h1, .section-title, .cta-band h2 { max-width: none; }
+    }
+    @media (max-width: 900px) {
+      .nav { grid-template-columns: 1fr; border-radius: 28px; }
+      .nav-links { justify-content: flex-start; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+      .nav-actions { justify-content: stretch; }
+      .nav-actions .button { flex: 1; }
+      .hero { padding-top: 34px; }
+      .signal-grid, .feature-grid, .panel-metrics { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      :root { --shell: min(100vw - 24px, 1240px); }
+      .hero h1 { font-size: clamp(42px, 14vw, 60px); }
+      .hero-kicker { font-size: clamp(24px, 8vw, 32px); }
+      .section-title { font-size: clamp(28px, 9vw, 40px); }
+      .button, .nav-links a { min-height: 46px; }
+      .cta-actions, .hero-actions { width: 100%; }
+      .hero-actions .button, .cta-actions .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Перейти к содержанию</a>
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar" id="progress-bar"></div></div>
+  <div class="modal" id="signup-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="close-button" type="button" aria-label="Закрыть окно" data-close>&times;</button>
+      <div class="eyebrow"><span class="eyebrow-mark">+</span> Базовый курс</div>
+      <h3 id="modal-title">Получите доступ к базовому курсу после регистрации</h3>
+      <p>После регистрации откроется базовый курс. Можно сразу зайти внутрь, посмотреть темы и понять, подходит ли вам такой способ обучения.</p>
+      <div class="hero-actions">
+        <a class="button button-dark" href="../../auth/">Пройти регистрацию</a>
+        <button class="button button-outline" type="button" data-close>Позже</button>
+      </div>
+    </div>
+  </div>
+  <header>
+    <div class="shell nav">
+      <a class="brand" href="#" aria-label="Академия риэлторов"><span class="brand-mark">АР</span><span class="brand-copy"><strong>Академия</strong><span>риэлторов</span></span></a>
+      <nav class="nav-links" aria-label="Основная навигация">
+        <a href="#format">Формат</a>
+        <a href="#topics">Темы</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#cta">Вход</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="button button-outline" href="../../auth/">Войти</a>
+        <a class="button button-fill" href="../../auth/">Выбрать курс</a>
+      </div>
+    </div>
+  </header>
+  <main class="shell" id="content">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-mark">01</span> Высшая школа недвижимости</div>
+        <h1>МАСТЕРСТВО В&nbsp;КАЖДОЙ СДЕЛКЕ</h1>
+        <p class="hero-kicker">Для тех, кто хочет быстрее разобраться в&nbsp;сделках, увереннее говорить с&nbsp;клиентом и&nbsp;меньше ошибаться в&nbsp;начале работы.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="../../auth/">Начать обучение</a>
+          <a class="button button-outline" href="#catalog">Смотреть каталог</a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <div class="panel-top"><div class="tag-row"><span class="tag live">активный курс</span><span class="tag soft">7 из 23 модулей</span></div></div>
+        <div class="panel-card">
+          <div class="panel-label">Прогресс курса</div>
+          <h2>Базовый курс риэлтора</h2>
+          <p class="section-copy" style="margin-top:10px;max-width:none;">Здесь видно, сколько модулей уже пройдено и что осталось дальше по курсу.</p>
+          <div class="progress-track"><span></span></div>
+        </div>
+        <div class="panel-metrics">
+          <div class="metric"><strong>72 ч</strong><span>материалов</span></div>
+          <div class="metric"><strong>23</strong><span>модуля</span></div>
+          <div class="metric"><strong>2000+</strong><span>слушателей</span></div>
+        </div>
+      </aside>
+    </section>
+    <section class="signal-grid signal-grid--full" aria-label="Ключевые преимущества">
+      <article class="signal"><div class="signal-top"><span class="icon-chip"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18h16M7 14l3-3 3 2 4-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span><strong>Прогресс видно сразу</strong></div><p>В курсе отображается общий прогресс, без лишней путаницы по вложенным уровням.</p></article>
+      <article class="signal"><div class="signal-top"><span class="icon-chip"><svg viewBox="0 0 24 24" fill="none"><path d="M8 7h8M8 12h8M8 17h5M5 4h14v16H5z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span><strong>Документы не теряются</strong></div><p>Юридические темы и рабочие материалы лежат в одном месте, а не по чатам и заметкам.</p></article>
+      <article class="signal"><div class="signal-top"><span class="icon-chip"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><path d="M19 12a7 7 0 1 1-2.05-4.95" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg></span><strong>Старт без перегруза</strong></div><p>Сначала можно пройти базовый курс, а уже потом решить, какой курс нужен дальше.</p></article>
+    </section>
+    <section id="format">
+      <div class="section-head">
+        <div><div class="eyebrow"><span class="eyebrow-mark">02</span> Формат</div><h2 class="section-title">Путь от&nbsp;первого модуля до&nbsp;устойчивой практики</h2></div>
+        <p class="section-copy">Базовый курс идёт по понятной логике: сначала вход в профессию, затем работа с клиентом, потом договоры, аналитика, переговоры и повседневная организация работы.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="icon-chip"><svg viewBox="0 0 24 24" fill="none"><path d="M6 19h12M8 16V8m4 8V5m4 11v-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span><h3>Старт</h3><p>Как устроена сделка, с чего начинается работа с клиентом и на что смотреть в первые недели.</p></article>
+        <article class="feature-card"><span class="icon-chip"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-4.35 7-10a4 4 0 0 0-7-2.65A4 4 0 0 0 5 11c0 5.65 7 10 7 10Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span><h3>Коммуникация</h3><p>Первые контакты, воронка, возражения, встречи и всё, что влияет на разговор с клиентом.</p></article>
+        <article class="feature-card"><span class="icon-chip"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10l2 3v13H5V7l2-3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M9 11h6M9 15h6" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg></span><h3>Юридическая база</h3><p>Документы, проверки, обременения, типовые ошибки и безопасная логика сделки.</p></article>
+        <article class="feature-card"><span class="icon-chip"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h6v8H4zM14 4h6v16h-6z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span><h3>Рабочий темп</h3><p>Материалы лежат в понятной последовательности, поэтому курс не разваливается на отдельные куски.</p></article>
+      </div>
+    </section>
+    <section id="topics">
+      <div class="section-head">
+        <div><div class="eyebrow"><span class="eyebrow-mark">03</span> Темы курса</div><h2 class="section-title">Быстрый обзор того, что внутри</h2></div>
+        <p class="section-copy">Внутри базового курса есть темы, к которым агент возвращается постоянно: первый контакт, встречи, возражения, переговоры, аналитика и рабочий порядок.</p>
+      </div>
+      <div class="topics-wrap"><div class="topics-cloud"><span class="topic accent">Введение в профессию</span><span class="topic">Постановка целей</span><span class="topic">Коммуникация</span><span class="topic">Первые контакты</span><span class="topic dark">Воронка продаж</span><span class="topic">Холодные звонки</span><span class="topic">Возражения</span><span class="topic">Встреча с собственником</span><span class="topic accent">Переговоры</span><span class="topic">Аналитика рынка</span><span class="topic">Юридические основы</span><span class="topic">Маркетинг</span><span class="topic">Тайм-менеджмент</span></div></div>
+    </section>
+    <section id="catalog">
+      <div class="section-head">
+        <div><div class="eyebrow"><span class="eyebrow-mark">04</span> Каталог</div><h2 class="section-title">Курсы с&nbsp;понятной задачей и&nbsp;понятным входом</h2></div>
+        <p class="section-copy">Можно начать с базового курса, а потом выбрать следующий под свою задачу: продажи, переговоры или нейросети в работе агента.</p>
+      </div>
+      <div class="program-grid">
+        <article class="program-card"><div class="program-meta"><span>Бесплатно</span><span>23 модуля</span></div><h3>Базовый курс риэлтора</h3><p>Курс для старта: как устроена сделка, что делает агент и на что важно смотреть в самом начале.</p></article>
+        <article class="program-card program-card--featured"><div class="program-meta"><span>Практикум</span><span>Продажи</span></div><h3>3+ сделки в месяц</h3><p>Практикум о том, как не терять клиента, держать воронку в порядке и доводить работу до результата.</p></article>
+        <article class="program-card"><div class="program-meta"><span>AI</span><span>Инструменты</span></div><h3>Нейросети для риэлторов</h3><p>Как использовать AI в работе агента: для текстов, анализа объектов и повседневных задач.</p></article>
+      </div>
+    </section>
+    <section id="cta">
+      <div class="cta-band">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-mark">05</span> Следующий шаг</div>
+          <h2>Начните с&nbsp;базового курса и&nbsp;дальше двигайтесь по&nbsp;своей задаче</h2>
+          <p>Если хотите сначала понять формат и спокойно войти в обучение, начните с базового курса. После него уже проще выбрать, что изучать дальше.</p>
+          <div class="cta-actions"><a class="button button-fill" href="../../auth/">Начать обучение</a><a class="button button-outline" href="#catalog">Смотреть каталог</a></div>
+        </div>
+        <div class="cta-panel">
+          <div class="cta-item"><strong>Доступ открывается сразу</strong><span>После входа или оплаты не нужно ждать отдельного подтверждения.</span></div>
+          <div class="cta-item"><strong>Можно учиться с телефона</strong><span>Навигация и структура сохраняются и на мобильном, и на десктопе.</span></div>
+          <div class="cta-item"><strong>Материалы не разбросаны</strong><span>Темы и модули лежат по порядку, а не в разных разделах без логики.</span></div>
+        </div>
+      </div>
+    </section>
+    <footer>Academy Realtors — онлайн-обучение для агентов по недвижимости.</footer>
+  </main>
+  <script>
+    const progressBar = document.getElementById("progress-bar");
+    const modal = document.getElementById("signup-modal");
+    const closeButtons = document.querySelectorAll("[data-close]");
+    const storageKey = "academy-concept-1-modal-seen";
+    function syncProgress() {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+      progressBar.style.width = `${ratio * 100}%`;
+    }
+    function closeModal() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      localStorage.setItem(storageKey, "1");
+    }
+    syncProgress();
+    window.addEventListener("scroll", syncProgress, { passive: true });
+    window.addEventListener("resize", syncProgress);
+    const isPreview = new URLSearchParams(window.location.search).has("preview");
+    if (!localStorage.getItem(storageKey) && !isPreview) {
+      window.setTimeout(() => {
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }, 3000);
+    }
+    closeButtons.forEach((button) => button.addEventListener("click", closeModal));
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("open")) closeModal();
+    });
+  </script>
+</body>
+</html>

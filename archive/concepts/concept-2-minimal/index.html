@@ -1,0 +1,482 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academy Realtors — Concept 2 Minimal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #0d0f12;
+      --muted: #6d727d;
+      --line: rgba(13, 15, 18, 0.1);
+      --line-strong: rgba(13, 15, 18, 0.16);
+      --soft: #f4f4f4;
+      --shell: min(1120px, calc(100vw - 40px));
+      --transition: 220ms ease;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--text); font-family: Inter, Arial, sans-serif; background: var(--bg); }
+    .dot-field {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.92;
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: var(--shell); margin: 0 auto; }
+    .progress { position: fixed; inset: 0 0 auto; z-index: 30; height: 3px; background: rgba(13, 15, 18, 0.06); }
+    .progress span { display: block; width: 0; height: 100%; background: #111; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(13, 15, 18, 0.06); }
+    .topbar { min-height: 76px; display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: center; }
+    .brand { font-size: 14px; font-weight: 800; letter-spacing: -0.03em; white-space: nowrap; }
+    nav { display: flex; justify-content: center; gap: 12px; min-width: 0; }
+    nav a { min-height: 40px; padding: 0 14px; border-radius: 999px; color: var(--muted); font-size: 14px; font-weight: 600; transition: background-color var(--transition), color var(--transition); }
+    nav a:hover, nav a:focus-visible { color: var(--text); background: var(--soft); outline: none; }
+    .actions, .hero-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .button {
+      min-height: 44px; padding: 0 16px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center;
+      border: 1px solid var(--line); font-size: 14px; font-weight: 700; transition: transform var(--transition), background-color var(--transition), color var(--transition), border-color var(--transition);
+    }
+    .button:hover, .button:focus-visible { transform: translateY(-2px); outline: none; }
+    .button-black { color: #fff; background: #111; border-color: #111; }
+    main { padding: 28px 0 56px; }
+    .hero {
+      display: grid; grid-template-columns: minmax(0, 1.1fr) 370px; gap: 28px; align-items: start;
+      min-height: clamp(620px, 88svh, 760px);
+    }
+    .hero-copy, .hero-panel {
+      border: 1px solid var(--line); border-radius: 34px; background: #fff;
+    }
+    .hero-copy {
+      display: grid; align-content: space-between; gap: 32px; padding: 34px;
+    }
+    .label { margin: 0; font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    h1 {
+      margin: 18px 0 0; max-width: 9.5ch; font-size: clamp(44px, 5.3vw, 76px); line-height: 0.98; letter-spacing: -0.06em; word-spacing: 0.04em; font-weight: 900; text-wrap: balance;
+    }
+    .sub { margin: 18px 0 0; max-width: 30rem; color: #484d59; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.08; letter-spacing: -0.035em; text-wrap: pretty; }
+    .lead { margin: 20px 0 0; max-width: 38rem; color: var(--muted); line-height: 1.72; text-wrap: pretty; }
+    .meta-strip { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .meta-pill { min-height: 40px; padding: 0 14px; display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; font-weight: 700; }
+    .hero-panel { display: grid; grid-template-rows: auto auto auto; align-self: start; overflow: hidden; }
+    .panel-head, .panel-foot { padding: 16px 20px; border-bottom: 1px solid var(--line); }
+    .panel-foot { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted); line-height: 1.6; }
+    .panel-head strong { display: block; line-height: 1.1; }
+    .panel-body { display: grid; align-content: start; gap: 16px; padding: 12px 20px 20px; background: linear-gradient(180deg, #fff 0%, #f8f8f8 100%); }
+    .course-scene {
+      min-height: 206px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid rgba(13, 15, 18, 0.08);
+      background:
+        radial-gradient(circle at 22% 20%, rgba(13, 15, 18, 0.08), transparent 18%),
+        radial-gradient(circle at 82% 24%, rgba(13, 15, 18, 0.05), transparent 22%),
+        linear-gradient(180deg, #fbfbfb 0%, #f0f0f0 100%);
+    }
+    .course-scene::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: 20px;
+      border: 1px dashed rgba(13, 15, 18, 0.08);
+    }
+    .scene-frame {
+      position: absolute;
+      inset: 18px;
+      padding: 16px;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(6px);
+    }
+    .scene-card__eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .scene-title {
+      display: block;
+      max-width: 11ch;
+      font-size: 28px;
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+      font-weight: 800;
+    }
+    .scene-copy {
+      margin: 0;
+      max-width: 23ch;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .scene-track {
+      display: grid;
+      gap: 8px;
+    }
+    .scene-track__line {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(13, 15, 18, 0.08);
+      overflow: hidden;
+    }
+    .scene-track__line span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: #111;
+    }
+    .scene-track__line--one span { width: 58%; }
+    .scene-track__line--two span { width: 36%; }
+    .scene-chip-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .scene-chip {
+      min-height: 30px;
+      padding: 0 10px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid rgba(13, 15, 18, 0.1);
+      background: rgba(255, 255, 255, 0.82);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .scene-module-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .scene-module-badge {
+      min-height: 28px;
+      padding: 0 10px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid rgba(13, 15, 18, 0.1);
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .scene-divider {
+      height: 1px;
+      background: rgba(13, 15, 18, 0.08);
+    }
+    .hero-course { padding: 20px; border-radius: 26px; background: #111; color: #fff; }
+    .hero-course h2 { margin: 12px 0 0; font-size: 40px; line-height: 0.94; letter-spacing: -0.05em; }
+    .line { height: 6px; margin-top: 14px; background: rgba(255,255,255,0.12); border-radius: 999px; overflow: hidden; }
+    .line span { display: block; width: 31%; height: 100%; background: #fff; }
+    .mini-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .mini-grid div { padding: 14px; border-radius: 20px; border: 1px solid var(--line); background: #fff; }
+    .mini-grid strong { display: block; font-size: 24px; line-height: 1; letter-spacing: -0.05em; }
+    .mini-grid span { display: block; margin-top: 6px; color: var(--muted); font-size: 12px; line-height: 1.35; }
+    section { padding: 36px 0; border-top: 1px solid rgba(13, 15, 18, 0.06); }
+    .split { display: grid; grid-template-columns: 300px 1fr; gap: 24px; align-items: start; }
+    .section-title { margin: 12px 0 0; max-width: 10ch; font-size: clamp(30px, 3.1vw, 46px); line-height: 0.98; letter-spacing: -0.055em; font-weight: 800; text-wrap: balance; }
+    .section-copy { color: var(--muted); line-height: 1.72; text-wrap: pretty; }
+    .grid-3, .grid-2 { display: grid; gap: 14px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .block {
+      padding: 20px; border: 1px solid var(--line); border-radius: 26px; background: #fff;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+    .block:hover { transform: translateY(-3px); border-color: var(--line-strong); box-shadow: 0 20px 40px rgba(13, 15, 18, 0.05); }
+    .block h3 { margin: 10px 0 8px; font-size: 24px; line-height: 1.02; letter-spacing: -0.05em; }
+    .block p { margin: 0; color: var(--muted); line-height: 1.66; text-wrap: pretty; }
+    .topics { display: flex; flex-wrap: wrap; gap: 10px; }
+    .topic { min-height: 44px; padding: 0 14px; display: inline-flex; align-items: center; border-radius: 999px; border: 1px solid var(--line); background: #fff; font-size: 14px; font-weight: 700; transition: transform var(--transition), background-color var(--transition); }
+    .topic:hover { transform: translateY(-2px); background: var(--soft); }
+    .quote { padding: 22px; border-radius: 26px; background: var(--soft); border: 1px solid rgba(13,15,18,0.08); color: #4b505d; line-height: 1.72; text-wrap: pretty; }
+    .cta { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: 26px; border: 1px solid var(--line); border-radius: 30px; }
+    .faq-list { display: grid; gap: 12px; }
+    .faq-item { padding: 18px 20px; border: 1px solid var(--line); border-radius: 24px; background: #fff; }
+    .faq-item strong { display: block; font-size: 19px; letter-spacing: -0.03em; }
+    .faq-item p { margin: 10px 0 0; color: var(--muted); line-height: 1.66; text-wrap: pretty; }
+    footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 600ms ease, transform 600ms ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 980px) {
+      .hero, .split, .cta { grid-template-columns: 1fr; }
+      .grid-3, .grid-2, .mini-grid { grid-template-columns: 1fr; }
+      h1, .section-title { max-width: none; }
+      .course-scene { min-height: 188px; }
+    }
+    @media (max-width: 860px) {
+      .topbar { grid-template-columns: 1fr; padding: 16px 0; }
+      nav { justify-content: flex-start; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+      .actions .button { flex: 1; }
+    }
+    @media (max-width: 640px) {
+      :root { --shell: min(100vw - 24px, 1120px); }
+      h1 { font-size: clamp(38px, 12vw, 54px); }
+      .sub { font-size: clamp(20px, 7vw, 26px); }
+      .hero-copy { padding: 24px; }
+      .hero-actions .button, .actions .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <canvas class="dot-field" id="dot-field" aria-hidden="true"></canvas>
+  <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+  <header>
+    <div class="shell topbar">
+      <div class="brand">Academy Realtors</div>
+      <nav aria-label="Основная навигация">
+        <a href="#format">Формат</a>
+        <a href="#topics">Темы</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="actions">
+        <a class="button" href="/auth">Войти</a>
+        <a class="button button-black" href="/auth">Выбрать курс</a>
+      </div>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <div>
+          <p class="label">Высшая школа недвижимости</p>
+          <h1>МАСТЕРСТВО В&nbsp;КАЖДОЙ СДЕЛКЕ</h1>
+          <p class="sub">Курс для тех, кто хочет быстрее разобраться в сделках и увереннее работать с клиентом.</p>
+          <p class="lead">Базовый курс разбирает основу работы агента: как вести первый разговор, как проходить встречу, где чаще всего ошибаются в документах и что важно не упускать по ходу сделки.</p>
+          <div class="hero-actions">
+            <a class="button button-black" href="/auth">Начать обучение</a>
+            <a class="button" href="#catalog">Смотреть каталог</a>
+          </div>
+          <div class="meta-strip">
+            <span class="meta-pill">23 модуля в базовом курсе</span>
+            <span class="meta-pill">Прогресс по курсу</span>
+            <span class="meta-pill">Вход с телефона и десктопа</span>
+          </div>
+        </div>
+        <div class="quote reveal">Можно начать с базового курса, освоиться внутри и уже потом решать, какой курс нужен следующим.</div>
+      </div>
+      <aside class="hero-panel reveal">
+        <div class="panel-head"><strong>Базовый курс риэлтора</strong></div>
+        <div class="panel-body">
+          <div class="course-scene" aria-hidden="true">
+            <div class="scene-frame">
+              <div class="scene-module-row">
+                <span class="scene-module-badge">Базовый курс</span>
+                <span class="scene-module-badge">Модуль 1</span>
+                <span class="scene-module-badge">Модуль 14</span>
+                <span class="scene-module-badge">Модуль 16</span>
+              </div>
+              <span class="scene-card__eyebrow">Внутри курса</span>
+              <strong class="scene-title">Введение в профессию</strong>
+              <p class="scene-copy">Первый модуль помогает понять роль агента, ход сделки и основные ориентиры в начале работы.</p>
+              <div class="scene-divider"></div>
+              <div class="scene-track">
+              <div class="scene-track__line scene-track__line--one"><span></span></div>
+              <div class="scene-track__line scene-track__line--two"><span></span></div>
+              </div>
+              <div class="scene-chip-row">
+                <span class="scene-chip">клиент</span>
+                <span class="scene-chip">договор</span>
+                <span class="scene-chip">аналитика</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-course">
+            <p class="label" style="color:rgba(255,255,255,0.72)">Прогресс курса</p>
+            <h2>7 из 23 модулей</h2>
+            <div class="line"><span></span></div>
+          </div>
+          <div class="mini-grid">
+            <div><strong>72 ч</strong><span>материалов</span></div>
+            <div><strong>23</strong><span>модуля</span></div>
+            <div><strong>0 ₽</strong><span>вход</span></div>
+          </div>
+        </div>
+        <div class="panel-foot">Базовый курс можно пройти бесплатно, а следующий выбрать уже под свою задачу.</div>
+      </aside>
+    </section>
+    <section id="format" class="split">
+      <div>
+        <p class="label">Формат</p>
+        <h2 class="section-title">Как устроен базовый курс</h2>
+      </div>
+      <div class="grid-3">
+        <article class="block reveal"><h3>Старт</h3><p>Как устроена сделка, с чего начинается работа с клиентом и на что смотреть в первые недели.</p></article>
+        <article class="block reveal"><h3>Практика</h3><p>Документы, проверки, обременения, налоги и типовые развилки, где ошибки стоят дорого.</p></article>
+        <article class="block reveal"><h3>Инструменты</h3><p>Материалы и сервисы, которые помогают быстрее готовиться к встречам и не держать всё в голове.</p></article>
+      </div>
+    </section>
+    <section id="topics" class="split">
+      <div>
+        <p class="label">Темы курса</p>
+        <h2 class="section-title">Короткий обзор содержимого</h2>
+      </div>
+      <div>
+        <p class="section-copy">Здесь коротко показаны темы базового курса: от первого контакта с клиентом до переговоров, аналитики и ежедневной работы агента.</p>
+        <div class="topics" style="margin-top:18px">
+          <span class="topic">Введение в профессию</span><span class="topic">Постановка целей</span><span class="topic">Коммуникация</span><span class="topic">Первые контакты</span><span class="topic">Воронка продаж</span><span class="topic">Холодные звонки</span><span class="topic">Возражения</span><span class="topic">Встреча с собственником</span><span class="topic">Договор на подбор</span><span class="topic">Аналитика рынка</span><span class="topic">Переговоры</span><span class="topic">Маркетинг</span><span class="topic">Тайм-менеджмент</span>
+        </div>
+      </div>
+    </section>
+    <section class="split">
+      <div>
+        <p class="label">Для кого</p>
+        <h2 class="section-title">Для кого этот курс</h2>
+      </div>
+      <div class="grid-2">
+        <div class="quote reveal">Курс подойдёт тем, кто только начинает, ведёт первые сделки или хочет навести порядок в разговорах с клиентом, документах и ежедневной работе.</div>
+        <article class="block reveal"><h3>Что внутри</h3><p>Здесь собраны темы, к которым агент возвращается чаще всего: клиент, документы, переговоры, аналитика и повседневная работа.</p></article>
+      </div>
+    </section>
+    <section id="catalog">
+      <div class="split" style="margin-bottom:18px">
+        <div>
+          <p class="label">Каталог</p>
+          <h2 class="section-title">Курсы внутри одной системы</h2>
+        </div>
+        <p class="section-copy">Можно начать с базового курса, а потом выбрать следующий под конкретную задачу: продажи, переговоры или нейросети в работе агента.</p>
+      </div>
+      <div class="grid-3">
+        <article class="block reveal"><h3>Базовый курс риэлтора</h3><p>Курс для старта: как устроена сделка, в чём роль агента и на что важно смотреть в самом начале.</p></article>
+        <article class="block reveal"><h3>3+ сделки в месяц</h3><p>Практикум о том, как не терять клиента, держать воронку в порядке и доводить работу до результата.</p></article>
+        <article class="block reveal"><h3>Нейросети для риэлторов</h3><p>Как использовать AI для текстов, анализа объектов и повседневных задач в работе агента.</p></article>
+      </div>
+    </section>
+    <section class="cta">
+      <div>
+        <p class="label">Следующий шаг</p>
+        <h2 class="section-title" style="max-width:10ch">Посмотрите базовый курс и решите, идти ли дальше</h2>
+      </div>
+      <div class="hero-actions" style="justify-content:flex-end">
+        <a class="button button-black" href="/auth">Начать обучение</a>
+        <a class="button" href="#faq">Открыть FAQ</a>
+      </div>
+    </section>
+    <section id="faq" class="split">
+      <div>
+        <p class="label">FAQ</p>
+        <h2 class="section-title">Вопросы перед стартом</h2>
+      </div>
+      <div class="faq-list">
+        <article class="faq-item reveal"><strong>Когда открывается доступ?</strong><p>Сразу после регистрации или оплаты, в зависимости от выбранного курса.</p></article>
+        <article class="faq-item reveal"><strong>Можно ли учиться с телефона?</strong><p>Да. Материалы и навигация адаптированы под мобильный и десктопный сценарий.</p></article>
+        <article class="faq-item reveal"><strong>Есть ли бесплатный вход?</strong><p>Да, базовый курс риэлтора можно пройти бесплатно.</p></article>
+      </div>
+    </section>
+    <footer>Academy Realtors — онлайн-обучение для агентов по недвижимости.</footer>
+  </main>
+  <script>
+    const progress = document.getElementById('progress');
+    const dotField = document.getElementById('dot-field');
+    const items = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.16 });
+    items.forEach((item) => io.observe(item));
+
+    const dotState = {
+      ctx: dotField.getContext('2d'),
+      dpr: Math.min(window.devicePixelRatio || 1, 2),
+      pointerX: -9999,
+      pointerY: -9999,
+      spacing: 26,
+      offset: 20,
+      radius: 1.15,
+      hoverScale: 2,
+      adjacentScale: 1.5,
+      activationRadius: 8
+    };
+
+    function resizeDotField() {
+      const { innerWidth, innerHeight } = window;
+      dotField.width = innerWidth * dotState.dpr;
+      dotField.height = innerHeight * dotState.dpr;
+      dotField.style.width = `${innerWidth}px`;
+      dotField.style.height = `${innerHeight}px`;
+      dotState.ctx.setTransform(dotState.dpr, 0, 0, dotState.dpr, 0, 0);
+    }
+
+    function renderDots() {
+      const ctx = dotState.ctx;
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      ctx.clearRect(0, 0, width, height);
+
+      const nearestGridX = dotState.offset + Math.round((dotState.pointerX - dotState.offset) / dotState.spacing) * dotState.spacing;
+      const nearestGridY = dotState.offset + Math.round((dotState.pointerY - dotState.offset) / dotState.spacing) * dotState.spacing;
+      const nearestDx = nearestGridX - dotState.pointerX;
+      const nearestDy = nearestGridY - dotState.pointerY;
+      const isActivated = Math.sqrt(nearestDx * nearestDx + nearestDy * nearestDy) <= dotState.activationRadius;
+
+      for (let y = dotState.offset; y <= height + dotState.spacing; y += dotState.spacing) {
+        for (let x = dotState.offset; x <= width + dotState.spacing; x += dotState.spacing) {
+          let radius = dotState.radius;
+          let alpha = 0.24;
+
+          if (isActivated) {
+            const samePoint = x === nearestGridX && y === nearestGridY;
+            const adjacentHorizontal = y === nearestGridY && Math.abs(x - nearestGridX) === dotState.spacing;
+            const adjacentVertical = x === nearestGridX && Math.abs(y - nearestGridY) === dotState.spacing;
+
+            if (samePoint) {
+              radius = dotState.radius * dotState.hoverScale;
+              alpha = 0.92;
+            } else if (adjacentHorizontal || adjacentVertical) {
+              radius = dotState.radius * dotState.adjacentScale;
+              alpha = 0.62;
+            }
+          }
+
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(13, 15, 18, ${alpha})`;
+          ctx.arc(x, y, radius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      requestAnimationFrame(renderDots);
+    }
+
+    window.addEventListener('mousemove', (event) => {
+      dotState.pointerX = event.clientX;
+      dotState.pointerY = event.clientY;
+    }, { passive: true });
+
+    window.addEventListener('mouseleave', () => {
+      dotState.pointerX = -9999;
+      dotState.pointerY = -9999;
+    });
+
+    function sync() {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = `${max > 0 ? Math.min(window.scrollY / max, 1) * 100 : 0}%`;
+    }
+
+    resizeDotField();
+    renderDots();
+    sync();
+    window.addEventListener('resize', resizeDotField);
+    window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+  </script>
+</body>
+</html>

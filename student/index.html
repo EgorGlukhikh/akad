@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портал ученика — Academy Realtors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/styles/system.css">
+  <link rel="stylesheet" href="../assets/styles/admin.css">
+</head>
+<body class="admin-page" data-grid="light">
+  <header class="admin-topbar">
+    <div class="admin-shell admin-topbar__inner">
+      <div class="admin-topbar__meta">
+        <a class="brand" href="../index.html" aria-label="Академия риэлторов">
+          <span class="brand-mark">АР</span>
+          <span class="brand-copy"><strong>Академия</strong><span>риэлторов</span></span>
+        </a>
+        <nav class="admin-breadcrumbs" aria-label="Навигация портала">
+          <a href="../index.html">Лендинг</a>
+          <span>/</span>
+          <span class="admin-breadcrumbs__current">Портал ученика</span>
+        </nav>
+      </div>
+      <div class="admin-actions">
+        <a class="button button-outline" href="../auth/index.html">Выйти</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-shell builder-layout">
+    <section class="admin-header admin-header--split">
+      <div>
+        <div class="eyebrow"><span class="eyebrow-mark">01</span> Обучение</div>
+        <h1 class="admin-display-title">Мои курсы</h1>
+      </div>
+      <p class="section-copy">Здесь видны доступные курсы, общий прогресс и быстрый переход к обучению.</p>
+    </section>
+
+    <section class="course-dashboard" data-student-courses></section>
+  </main>
+
+  <script src="../assets/scripts/course-store.js"></script>
+  <script src="../assets/scripts/student-courses.js"></script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400&amp;family=Work+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#ffb4a1",
+                    "primary": "#0030d0",
+                    "secondary-fixed-dim": "#b1d500",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#b72c00",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#f9f9f8",
+                    "tertiary-fixed": "#ffdbd2",
+                    "on-secondary-container": "#576a00",
+                    "on-primary-fixed": "#00105c",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#d6daff",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2f3130",
+                    "surface-bright": "#f9f9f8",
+                    "on-tertiary-fixed": "#3c0800",
+                    "on-secondary-fixed-variant": "#3e4c00",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#8d2000",
+                    "inverse-primary": "#bac3ff",
+                    "surface-container-low": "#f3f4f3",
+                    "surface-container": "#eeeeed",
+                    "outline-variant": "#c4c5da",
+                    "secondary-container": "#c8ef18",
+                    "outline": "#747688",
+                    "on-tertiary-fixed-variant": "#891e00",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#536500",
+                    "surface-dim": "#dadad9",
+                    "on-surface": "#1a1c1c",
+                    "secondary-fixed": "#cbf21d",
+                    "inverse-on-surface": "#f1f1f0",
+                    "primary-container": "#1b46ff",
+                    "primary-fixed-dim": "#bac3ff",
+                    "surface-tint": "#1643fd",
+                    "on-tertiary-container": "#ffd2c7",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container-high": "#e8e8e7",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e2e2e2",
+                    "primary-fixed": "#dee0ff",
+                    "on-secondary-fixed": "#171e00",
+                    "on-surface-variant": "#444657",
+                    "background": "#f9f9f8",
+                    "on-background": "#1a1c1c",
+                    "on-primary-fixed-variant": "#002eca"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk", "sans-serif"],
+                    "body": ["Work Sans", "sans-serif"],
+                    "label": ["Newsreader", "serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .tech-grid {
+            background-image: 
+                linear-gradient(to right, rgba(196, 197, 218, 0.15) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(196, 197, 218, 0.15) 1px, transparent 1px);
+            background-size: 48px 48px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0030d0 0%, #1b46ff 100%);
+        }
+        .icon-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            margin-bottom: 1.5rem;
+            border-radius: 9999px;
+            background: rgba(200, 239, 24, 0.2);
+            color: #2346ff;
+            border: 1px solid rgba(35, 70, 255, 0.1);
+        }
+        .icon-badge .material-symbols-outlined {
+            font-size: 1.35rem;
+            font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+        }
+        .micro-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 0.9rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(116, 118, 136, 0.18);
+            background: rgba(255, 255, 255, 0.8);
+            color: #444657;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        .micro-chip .material-symbols-outlined {
+            font-size: 1rem;
+            color: #2346ff;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#F9F9F8] backdrop-blur-xl bg-opacity-70">
+<div class="flex justify-between items-center px-8 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-bold font-headline tracking-tighter text-[#1B46FF]">
+                ACADEMY REALTORS
+            </div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-[#1B46FF] border-b-2 border-[#1B46FF] pb-1 font-bold font-headline text-sm tracking-tight transition-all duration-200 active:scale-95" href="#">Программы</a>
+<a class="text-slate-600 font-medium font-headline text-sm tracking-tight hover:text-[#1B46FF] transition-colors duration-300 transition-all duration-200 active:scale-95" href="#">Подход</a>
+<a class="text-slate-600 font-medium font-headline text-sm tracking-tight hover:text-[#1B46FF] transition-colors duration-300 transition-all duration-200 active:scale-95" href="#">О школе</a>
+<a class="text-slate-600 font-medium font-headline text-sm tracking-tight hover:text-[#1B46FF] transition-colors duration-300 transition-all duration-200 active:scale-95" href="#">Контакты</a>
+</div>
+<button class="bg-primary-container text-white px-8 py-2.5 rounded-full font-headline font-bold text-sm tracking-tight hover:brightness-110 transition-all active:scale-95">
+                Выбрать курс
+            </button>
+</div>
+</nav>
+<main class="tech-grid pt-32 min-h-screen">
+<!-- Hero Section -->
+<section class="max-w-[1440px] mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-32">
+<div class="lg:col-span-7">
+<span class="inline-block font-headline text-primary font-bold tracking-widest text-xs mb-6 uppercase">ВЫСШАЯ ШКОЛА НЕДВИЖИМОСТИ</span>
+<h1 class="font-headline text-7xl md:text-8xl font-bold leading-[0.9] tracking-tight mb-8">
+                    МАСТЕРСТВО В КАЖДОЙ СДЕЛКЕ
+                </h1>
+<p class="font-label italic text-3xl text-outline mb-8 leading-tight">
+                    Архитектура вашего профессионального роста
+                </p>
+<p class="max-w-xl text-lg text-on-surface-variant mb-12 leading-relaxed">
+                    Первая образовательная экосистема для агентов будущего. Мы объединяем юридическую точность, психологию переговоров и цифровой маркетинг в единый образовательный стандарт.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="hero-gradient text-white px-10 py-4 rounded-full font-headline font-bold tracking-tight active:scale-95 transition-transform">
+                        Начать обучение
+                    </button>
+<button class="border-2 border-outline-variant text-on-surface px-10 py-4 rounded-full font-headline font-bold tracking-tight hover:bg-surface-container-low transition-colors">
+                        Программы
+</button>
+</div>
+<div class="flex flex-wrap gap-3 mt-8">
+<div class="micro-chip">
+<span class="material-symbols-outlined">grid_view</span>
+<span>12 модулей в одной системе</span>
+</div>
+<div class="micro-chip">
+<span class="material-symbols-outlined">verified</span>
+<span>Право, переговоры, digital</span>
+</div>
+<div class="micro-chip">
+<span class="material-symbols-outlined">timeline</span>
+<span>Прогресс виден сразу</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative bg-primary-container rounded-[2rem] aspect-[4/5] overflow-hidden p-8 shadow-2xl flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10 w-24 h-24 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="architecture">architecture</span>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full font-headline font-bold text-xs uppercase tracking-tighter">
+                            Активный модуль
+                        </div>
+</div>
+<div class="space-y-6">
+<div class="bg-white rounded-xl p-6 shadow-lg transform translate-x-4">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<p class="font-headline font-bold text-sm">Прогресс сделки</p>
+<p class="text-xs text-outline italic font-label">Завершено 84% модуля</p>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full w-[84%]"></div>
+</div>
+</div>
+<div class="bg-white/90 backdrop-blur-md rounded-xl p-6 border border-white/20 transform -translate-x-8">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border-2 border-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional male real estate mentor profile portrait smiling kindly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAwhllypQ_Xlu9oNqLcBJsVGOyq036IX7UKj013mE8qSEjL_nDdWOdDk3oqYe0UtKPu6PnwH44H3TYPFVvurceEzInxX9fNujRG6L2D783vHT9lV-T7_3kzmZeaonrLvUBS9umil4zrCR0vB8aGH8wKgeNJXu5lOyeR6ppVTuJiRbfAK14uJrxIhpzufx0aa1iVwCyU2FYrkYsneS2tU3G2MUBF5L_h4Ixv6iZr571jgwj4OxKMYs0z6du_2WXXFSifoqiGdsQgDPJ"/>
+</div>
+<div>
+<p class="font-headline font-bold text-sm text-primary">Живой разбор</p>
+<p class="text-xs font-medium">Константин Александров</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Abstract decorative shapes -->
+<div class="absolute -z-10 -bottom-10 -right-10 w-48 h-48 bg-secondary-fixed opacity-20 blur-3xl rounded-full"></div>
+</div>
+</section>
+<!-- Section 2: Core Principles -->
+<section class="bg-surface-container-low py-32">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="group">
+<div class="icon-badge">
+<span class="material-symbols-outlined">query_stats</span>
+</div>
+<span class="font-headline text-8xl font-bold text-primary/10 group-hover:text-primary/20 transition-colors">01</span>
+<h3 class="font-label italic text-2xl mb-4 -mt-8 relative z-10">Аналитический подход</h3>
+<p class="text-on-surface-variant leading-relaxed">Мы учим не просто продавать, а анализировать рыночные циклы и прогнозировать доходность объектов недвижимости.</p>
+</div>
+<div class="group">
+<div class="icon-badge">
+<span class="material-symbols-outlined">gavel</span>
+</div>
+<span class="font-headline text-8xl font-bold text-primary/10 group-hover:text-primary/20 transition-colors">02</span>
+<h3 class="font-label italic text-2xl mb-4 -mt-8 relative z-10">Юридический щит</h3>
+<p class="text-on-surface-variant leading-relaxed">Безопасность клиента превыше всего. Наши выпускники владеют всеми тонкостями правовой экспертизы документов.</p>
+</div>
+<div class="group">
+<div class="icon-badge">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<span class="font-headline text-8xl font-bold text-primary/10 group-hover:text-primary/20 transition-colors">03</span>
+<h3 class="font-label italic text-2xl mb-4 -mt-8 relative z-10">Цифровой этикет</h3>
+<p class="text-on-surface-variant leading-relaxed">Освоение передовых инструментов PropTech и современных стандартов коммуникации с премиальным сегментом.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Curriculum Architecture -->
+<section class="py-32 max-w-[1440px] mx-auto px-8">
+<div class="mb-20">
+<h2 class="font-headline text-5xl font-bold tracking-tight mb-4">Архитектура обучения</h2>
+<p class="font-label italic text-2xl text-outline">Многоуровневая система подготовки специалистов</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-1 px-1 bg-outline-variant/10">
+<div class="bg-surface p-12 hover:bg-white transition-all duration-500">
+<div class="flex items-center gap-6 mb-8">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="foundation">foundation</span>
+<h4 class="font-headline text-2xl font-bold tracking-tight">Фундаментальные основы</h4>
+</div>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="w-1.5 h-1.5 bg-primary mt-2 rounded-full"></span>
+<span class="text-lg">История архитектурных стилей и планировок</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="w-1.5 h-1.5 bg-primary mt-2 rounded-full"></span>
+<span class="text-lg">Оценка технического состояния зданий</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="w-1.5 h-1.5 bg-primary mt-2 rounded-full"></span>
+<span class="text-lg">Экономика рынка жилой недвижимости</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface p-12 hover:bg-white transition-all duration-500">
+<div class="flex items-center gap-6 mb-8">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="gavel">gavel</span>
+<h4 class="font-headline text-2xl font-bold tracking-tight">Право и Налоги</h4>
+</div>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="w-1.5 h-1.5 bg-primary mt-2 rounded-full"></span>
+<span class="text-lg">Сопровождение сделок по переуступке</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="w-1.5 h-1.5 bg-primary mt-2 rounded-full"></span>
+<span class="text-lg">Налоговая оптимизация при продаже</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="w-1.5 h-1.5 bg-primary mt-2 rounded-full"></span>
+<span class="text-lg">Международные стандарты комплаенса</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Section 4: Active Programs -->
+<section class="py-32 bg-surface-container">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline text-5xl font-bold tracking-tight mb-4">Актуальные программы</h2>
+<p class="font-label italic text-2xl text-outline">Выберите ваш вектор развития</p>
+</div>
+<a class="font-headline font-bold text-primary flex items-center gap-2 hover:translate-x-1 transition-transform" href="#">
+                        Все курсы
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Course Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-500 pb-12">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="minimalist architectural interior with clean lines and soft daylight reflecting on polished surfaces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANvegWHDIijSD-6HTxNgnlnSr3EYy8wWkJxjiGEYg7R91v5fOgnkO--vAY7Ylaa7dKxvo5imjZiZRj2CatWizp5ZJJKPgpQL90WgKDP5k8wZCw3NxthGEJ8gy4DWi4UOR1OpVM4BM682evPMwrQKeuiJvszdnb1ExrWErqCwQNzsQh8uvXVWC3UpAevhXQiJUfdDHYHXgo4JjtUniHbCf7ZzK9UyBZ_8eBzGi5Sti0zosuyECPiKMyweHcs7UntJDiIGHab7PIH_ej"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold font-headline uppercase tracking-wider">Bestseller</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<span class="material-symbols-outlined text-xl">apartment</span>
+<span class="font-headline text-xs uppercase tracking-[0.24em]">Жилой сегмент</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-3 tracking-tight">Основы жилой недвижимости</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Комплексный курс для старта карьеры. От поиска первого листинга до подписания акта приема-передачи.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="font-headline font-bold text-sm">4.9</span>
+</div>
+<div class="text-xs text-outline font-medium tracking-tight">120 часов</div>
+</div>
+<span class="font-headline font-bold text-primary text-xl">45,000 ₽</span>
+</div>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-500 pb-12">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="close-up of legal documents and a fountain pen on a designer glass desk with soft blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0_P4X4cc0lBgb5QYtI8FAH8jMYh0-UFoss08dzcjZD1Z3xDwyIZxExoqUiDkwuLOl7LO5G-dGqLvTe-gd4V_xzGPbxQ7yVJgYDNyAROvc1Vg2TDwJtiA4daiIXCm7eK9voBMrnrGZx-yzsxi9g_EpTaTUMVxWZaW83fkasbGNG_-pAIBOQPWdX57hx7Tt9uU_mL-3WjMr5rgCW9Uk5fhhtEOkMy2dGykUAx4LFI4rG7ZsLdd9D_kEH1tFQ6OWw2c4XhNVyIRU8zUt"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary-container text-white px-3 py-1 rounded-full text-[10px] font-bold font-headline uppercase tracking-wider">Advanced</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<span class="material-symbols-outlined text-xl">verified_user</span>
+<span class="font-headline text-xs uppercase tracking-[0.24em]">Правовая практика</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-3 tracking-tight">Юридическая чистота сделки</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Углубленная проверка обременений, работа с наследством и приватизацией. Техники минимизации рисков.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="font-headline font-bold text-sm">5.0</span>
+</div>
+<div class="text-xs text-outline font-medium tracking-tight">84 часа</div>
+</div>
+<span class="font-headline font-bold text-primary text-xl">62,000 ₽</span>
+</div>
+</div>
+</div>
+<!-- Course Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-500 pb-12">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="professional modern meeting room with panoramic city view at twilight with vibrant blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNt4VQQDtjAfGsDYpygtaI2ChouhEK9UfWusNDuPd0LwdDvf_tG11SvXV5KeuEF61O1SRAauDC_LWzxSNmxa8sD3A9-U22OnEgJMAF_Hc7gffLPSYMcyU0PahuXs-oBwZRxQ3qGZCEIo5I5h_hDxGTbRDRmK7APAPHmTObvsH4TtLpixI3pCMF2MYyEKnH50iOj6EkR0vVh5BvgQtsO07d_Lig1NyrWpNt-J1W8XO6O4R2citRftCHoZqPwi8yaNd14leV9ColXead"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface-container-highest text-on-surface px-3 py-1 rounded-full text-[10px] font-bold font-headline uppercase tracking-wider">Expert</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<span class="material-symbols-outlined text-xl">monitoring</span>
+<span class="font-headline text-xs uppercase tracking-[0.24em]">Инвестиционный анализ</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-3 tracking-tight">Инвестиционный брокеридж</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Построение портфелей недвижимости для частных инвесторов. Расчет CAP rate и ROI в разных сегментах.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="font-headline font-bold text-sm">4.8</span>
+</div>
+<div class="text-xs text-outline font-medium tracking-tight">96 часов</div>
+</div>
+<span class="font-headline font-bold text-primary text-xl">78,000 ₽</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-[1440px] mx-auto px-8 my-32">
+<div class="hero-gradient rounded-[2.5rem] p-16 md:p-24 text-center text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-96 h-96 bg-secondary-container opacity-10 blur-3xl -translate-y-1/2 translate-x-1/2 rounded-full"></div>
+<h2 class="font-headline text-5xl md:text-7xl font-bold mb-8 relative z-10">Готовы изменить правила игры?</h2>
+<p class="font-label italic text-2xl mb-12 opacity-90 relative z-10">Станьте частью нового поколения экспертов Academy Realtors</p>
+<button class="bg-white text-primary px-12 py-5 rounded-full font-headline font-bold text-lg tracking-tight hover:scale-105 active:scale-95 transition-all shadow-xl">
+                    Забронировать консультацию
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-16 px-8 mt-24 bg-[#f3f4f3]">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between items-start max-w-[1440px] mx-auto">
+<div class="mb-12 lg:mb-0">
+<div class="text-xl font-bold font-headline text-[#1B46FF] mb-6">
+                    ACADEMY REALTORS
+                </div>
+<p class="text-slate-500 font-label italic text-lg max-w-xs">
+                    Превращаем профессиональные амбиции в архитектурные достижения.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-16">
+<div>
+<h5 class="font-headline font-bold text-sm tracking-widest uppercase mb-8 text-[#1B46FF]">Компания</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 font-medium hover:underline underline-offset-4 decoration-[#1B46FF]/30 transition-all duration-300" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 font-medium hover:underline underline-offset-4 decoration-[#1B46FF]/30 transition-all duration-300" href="#">Terms of Service</a></li>
+<li><a class="text-slate-500 font-medium hover:underline underline-offset-4 decoration-[#1B46FF]/30 transition-all duration-300" href="#">Cookie Settings</a></li>
+<li><a class="text-slate-500 font-medium hover:underline underline-offset-4 decoration-[#1B46FF]/30 transition-all duration-300" href="#">Global Presence</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline font-bold text-sm tracking-widest uppercase mb-8 text-[#1B46FF]">Контакты</h5>
+<ul class="space-y-4 font-body text-slate-500">
+<li>info@academyrealtors.ru</li>
+<li>8 (800) 555-32-11</li>
+<li>Москва, ул. Архитектурная, 12</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto mt-20 pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-500 font-body text-sm">© 2024 Academy Realtors. Architectural Curation.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary transition-colors" data-icon="language">language</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary transition-colors" data-icon="share">share</span>
+</div>
+</div>
+</footer>
+</body></html>

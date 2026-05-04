@@ -1,0 +1,228 @@
+- generic [active] [ref=e1]:
+  - link "Перейти к содержанию" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "Академия риэлторов" [ref=e6] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e7]: АР
+        - generic [ref=e8]:
+          - strong [ref=e9]: Академия
+          - generic [ref=e10]: риэлторов
+      - navigation "Основная навигация" [ref=e11]:
+        - link "Формат" [ref=e12] [cursor=pointer]:
+          - /url: "#format"
+        - link "Темы" [ref=e13] [cursor=pointer]:
+          - /url: "#topics"
+        - link "Каталог" [ref=e14] [cursor=pointer]:
+          - /url: "#catalog"
+        - link "Карта проекта" [ref=e15] [cursor=pointer]:
+          - /url: "#project-map"
+        - link "Вход" [ref=e16] [cursor=pointer]:
+          - /url: "#cta"
+      - generic [ref=e17]:
+        - link "Войти" [ref=e18] [cursor=pointer]:
+          - /url: ./auth/
+        - link "Выбрать курс" [ref=e19] [cursor=pointer]:
+          - /url: ./auth/
+  - main [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]: "01"
+          - text: Высшая школа недвижимости
+        - heading "МАСТЕРСТВО В КАЖДОЙ СДЕЛКЕ" [level=1] [ref=e25]
+        - paragraph [ref=e26]: Для тех, кто хочет быстрее разобраться в сделках, увереннее говорить с клиентом и меньше ошибаться в начале работы.
+        - generic [ref=e27]:
+          - link "Начать обучение" [ref=e28] [cursor=pointer]:
+            - /url: ./auth/
+          - link "Смотреть каталог" [ref=e29] [cursor=pointer]:
+            - /url: "#catalog"
+      - complementary [ref=e30]:
+        - generic [ref=e32]:
+          - generic [ref=e33]: активный курс
+          - generic [ref=e34]: 7 из 23 модулей
+        - generic [ref=e35]:
+          - generic [ref=e36]: Прогресс курса
+          - heading "Базовый курс риэлтора" [level=2] [ref=e37]
+          - paragraph [ref=e38]: Здесь видно, сколько модулей уже пройдено и что осталось дальше по курсу.
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - strong [ref=e43]: 72 ч
+            - text: материалов
+          - generic [ref=e44]:
+            - strong [ref=e45]: "23"
+            - text: модуля
+          - generic [ref=e46]:
+            - strong [ref=e47]: 2000+
+            - text: слушателей
+    - region "Ключевые преимущества" [ref=e48]:
+      - article [ref=e49]:
+        - generic [ref=e50]:
+          - img [ref=e52]
+          - strong [ref=e54]: Прогресс видно сразу
+        - paragraph [ref=e55]: В курсе отображается общий прогресс, без лишней путаницы по вложенным уровням.
+      - article [ref=e56]:
+        - generic [ref=e57]:
+          - img [ref=e59]
+          - strong [ref=e61]: Документы не теряются
+        - paragraph [ref=e62]: Юридические темы и рабочие материалы лежат в одном месте, а не по чатам и заметкам.
+      - article [ref=e63]:
+        - generic [ref=e64]:
+          - img [ref=e66]
+          - strong [ref=e69]: Старт без перегруза
+        - paragraph [ref=e70]: Сначала можно пройти базовый курс, а уже потом решить, какой курс нужен дальше.
+    - generic [ref=e71]:
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - generic [ref=e74]:
+            - generic [ref=e75]: "02"
+            - text: Формат
+          - heading "Путь от первого модуля до устойчивой практики" [level=2] [ref=e76]
+        - paragraph [ref=e77]: "Базовый курс идёт по понятной логике: сначала вход в профессию, затем работа с клиентом, потом договоры, аналитика, переговоры и повседневная организация работы."
+      - generic [ref=e78]:
+        - article [ref=e79]:
+          - img [ref=e81]
+          - heading "Старт" [level=3] [ref=e83]
+          - paragraph [ref=e84]: Как устроена сделка, с чего начинается работа с клиентом и на что смотреть в первые недели.
+        - article [ref=e85]:
+          - img [ref=e87]
+          - heading "Коммуникация" [level=3] [ref=e89]
+          - paragraph [ref=e90]: Первые контакты, воронка, возражения, встречи и всё, что влияет на разговор с клиентом.
+        - article [ref=e91]:
+          - img [ref=e93]
+          - heading "Юридическая база" [level=3] [ref=e96]
+          - paragraph [ref=e97]: Документы, проверки, обременения, типовые ошибки и безопасная логика сделки.
+        - article [ref=e98]:
+          - img [ref=e100]
+          - heading "Рабочий темп" [level=3] [ref=e102]
+          - paragraph [ref=e103]: Материалы лежат в понятной последовательности, поэтому курс не разваливается на отдельные куски.
+    - generic [ref=e104]:
+      - generic [ref=e105]:
+        - generic [ref=e106]:
+          - generic [ref=e107]:
+            - generic [ref=e108]: "03"
+            - text: Темы курса
+          - heading "Быстрый обзор того, что внутри" [level=2] [ref=e109]
+        - paragraph [ref=e110]: "Внутри базового курса есть темы, к которым агент возвращается постоянно: первый контакт, встречи, возражения, переговоры, аналитика и рабочий порядок."
+      - generic [ref=e112]:
+        - generic [ref=e113]: Введение в профессию
+        - generic [ref=e114]: Постановка целей
+        - generic [ref=e115]: Коммуникация
+        - generic [ref=e116]: Первые контакты
+        - generic [ref=e117]: Воронка продаж
+        - generic [ref=e118]: Холодные звонки
+        - generic [ref=e119]: Возражения
+        - generic [ref=e120]: Встреча с собственником
+        - generic [ref=e121]: Переговоры
+        - generic [ref=e122]: Аналитика рынка
+        - generic [ref=e123]: Юридические основы
+        - generic [ref=e124]: Маркетинг
+        - generic [ref=e125]: Тайм-менеджмент
+    - generic [ref=e126]:
+      - generic [ref=e127]:
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - generic [ref=e130]: "04"
+            - text: Каталог
+          - heading "Курсы с понятной задачей и понятным входом" [level=2] [ref=e131]
+        - paragraph [ref=e132]: "Можно начать с базового курса, а потом выбрать следующий под свою задачу: продажи, переговоры или нейросети в работе агента."
+      - generic [ref=e133]:
+        - article [ref=e134]:
+          - generic [ref=e135]:
+            - generic [ref=e136]: Бесплатно
+            - generic [ref=e137]: 23 модуля
+          - heading "Базовый курс риэлтора" [level=3] [ref=e138]
+          - paragraph [ref=e139]: "Курс для старта: как устроена сделка, что делает агент и на что важно смотреть в самом начале."
+        - article [ref=e140]:
+          - generic [ref=e141]:
+            - generic [ref=e142]: Практикум
+            - generic [ref=e143]: Продажи
+          - heading "3+ сделки в месяц" [level=3] [ref=e144]
+          - paragraph [ref=e145]: Практикум о том, как не терять клиента, держать воронку в порядке и доводить работу до результата.
+        - article [ref=e146]:
+          - generic [ref=e147]:
+            - generic [ref=e148]: AI
+            - generic [ref=e149]: Инструменты
+          - heading "Нейросети для риэлторов" [level=3] [ref=e150]
+          - paragraph [ref=e151]: "Как использовать AI в работе агента: для текстов, анализа объектов и повседневных задач."
+    - generic [ref=e152]:
+      - generic [ref=e153]:
+        - generic [ref=e154]:
+          - generic [ref=e155]:
+            - generic [ref=e156]: "00"
+            - text: Навигация
+          - heading "Все экраны проекта из одного места" [level=2] [ref=e157]
+        - paragraph [ref=e158]: "Этот блок нужен как рабочая карта прототипа: можно открыть публичные страницы, вход в платформу и админские экраны конструктора курса."
+      - generic "Карта страниц проекта" [ref=e159]:
+        - link "Публичная часть Лендинг Главная страница Академии с каталогом, базовым курсом и переходом к входу. Открыть экран →" [ref=e160] [cursor=pointer]:
+          - /url: ./
+          - generic [ref=e161]:
+            - generic [ref=e162]: Публичная часть
+            - generic [ref=e163]:
+              - heading "Лендинг" [level=3] [ref=e164]
+              - paragraph [ref=e165]: Главная страница Академии с каталогом, базовым курсом и переходом к входу.
+          - generic [ref=e166]: Открыть экран →
+        - link "Авторизация Вход в платформу Экран входа с фирменным split-layout и переходом дальше в рабочую среду. Открыть экран →" [ref=e167] [cursor=pointer]:
+          - /url: ./auth/
+          - generic [ref=e168]:
+            - generic [ref=e169]: Авторизация
+            - generic [ref=e170]:
+              - heading "Вход в платформу" [level=3] [ref=e171]
+              - paragraph [ref=e172]: Экран входа с фирменным split-layout и переходом дальше в рабочую среду.
+          - generic [ref=e173]: Открыть экран →
+        - 'link "Админка Создание курса Структура курса: разделы, уроки, тесты, вложенность и действия с элементами. Открыть экран →" [ref=e174] [cursor=pointer]':
+          - /url: ./admin/course/
+          - generic [ref=e175]:
+            - generic [ref=e176]: Админка
+            - generic [ref=e177]:
+              - heading "Создание курса" [level=3] [ref=e178]
+              - paragraph [ref=e179]: "Структура курса: разделы, уроки, тесты, вложенность и действия с элементами."
+          - generic [ref=e180]: Открыть экран →
+        - link "Редактор Редактор урока Сборка урока из текста, фото, видео и тестового блока. Открыть экран →" [ref=e181] [cursor=pointer]:
+          - /url: ./admin/lesson/
+          - generic [ref=e182]:
+            - generic [ref=e183]: Редактор
+            - generic [ref=e184]:
+              - heading "Редактор урока" [level=3] [ref=e185]
+              - paragraph [ref=e186]: Сборка урока из текста, фото, видео и тестового блока.
+          - generic [ref=e187]: Открыть экран →
+        - link "Редактор Редактор теста Создание вопросов с одним или несколькими правильными ответами. Открыть экран →" [ref=e188] [cursor=pointer]:
+          - /url: ./admin/test/
+          - generic [ref=e189]:
+            - generic [ref=e190]: Редактор
+            - generic [ref=e191]:
+              - heading "Редактор теста" [level=3] [ref=e192]
+              - paragraph [ref=e193]: Создание вопросов с одним или несколькими правильными ответами.
+          - generic [ref=e194]: Открыть экран →
+        - link "Архив концепта Concept 1 Hyper Исходный выбранный концепт лендинга, оставлен как референс внутри проекта. Открыть экран →" [ref=e195] [cursor=pointer]:
+          - /url: ./concepts/concept-1-hyper/
+          - generic [ref=e196]:
+            - generic [ref=e197]: Архив концепта
+            - generic [ref=e198]:
+              - heading "Concept 1 Hyper" [level=3] [ref=e199]
+              - paragraph [ref=e200]: Исходный выбранный концепт лендинга, оставлен как референс внутри проекта.
+          - generic [ref=e201]: Открыть экран →
+    - generic [ref=e203]:
+      - generic [ref=e204]:
+        - generic [ref=e205]:
+          - generic [ref=e206]: "05"
+          - text: Следующий шаг
+        - heading "Начните с базового курса и дальше двигайтесь по своей задаче" [level=2] [ref=e207]
+        - paragraph [ref=e208]: Если хотите сначала понять формат и спокойно войти в обучение, начните с базового курса. После него уже проще выбрать, что изучать дальше.
+        - generic [ref=e209]:
+          - link "Начать обучение" [ref=e210] [cursor=pointer]:
+            - /url: ./auth/
+          - link "Смотреть каталог" [ref=e211] [cursor=pointer]:
+            - /url: "#catalog"
+      - generic [ref=e212]:
+        - generic [ref=e213]:
+          - strong [ref=e214]: Доступ открывается сразу
+          - generic [ref=e215]: После входа или оплаты не нужно ждать отдельного подтверждения.
+        - generic [ref=e216]:
+          - strong [ref=e217]: Можно учиться с телефона
+          - generic [ref=e218]: Навигация и структура сохраняются и на мобильном, и на десктопе.
+        - generic [ref=e219]:
+          - strong [ref=e220]: Материалы не разбросаны
+          - generic [ref=e221]: Темы и модули лежат по порядку, а не в разных разделах без логики.
+    - generic [ref=e222]: Academy Realtors — онлайн-обучение для агентов по недвижимости.

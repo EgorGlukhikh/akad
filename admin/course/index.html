@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новый курс — Админка Academy Realtors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/styles/system.css">
+  <link rel="stylesheet" href="../../assets/styles/admin.css">
+</head>
+<body class="admin-page" data-grid="light">
+  <header class="admin-topbar">
+    <div class="admin-shell admin-topbar__inner">
+      <div class="admin-topbar__meta">
+        <a class="brand" href="../../index.html" aria-label="Академия риэлторов">
+          <span class="brand-mark">АР</span>
+          <span class="brand-copy">
+            <strong>Академия</strong>
+            <span>риэлторов</span>
+          </span>
+        </a>
+        <nav class="admin-breadcrumbs" aria-label="Навигация админки">
+          <a href="../courses/index.html">Курсы</a>
+          <span>/</span>
+          <span class="admin-breadcrumbs__current">Создание курса</span>
+        </nav>
+      </div>
+      <div class="admin-actions">
+        <a class="button button-outline" href="../courses/index.html">К списку курсов</a>
+        <a class="button button-outline" href="../../auth/index.html">Выйти</a>
+        <button class="button button-outline" type="button" data-save-draft>Сохранить черновик</button>
+        <button class="button button-dark" type="button" data-publish-course>Опубликовать</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-shell builder-layout">
+    <section class="admin-header">
+      <div class="eyebrow"><span class="eyebrow-mark">01</span> Создание курса</div>
+      <input class="admin-title-input" type="text" value="Новый курс" data-course-title>
+      <div class="admin-description-wrap">
+        <textarea class="admin-description-input" data-course-description>Кратко опишите, чему посвящён курс, для кого он нужен и что слушатель поймёт после прохождения.</textarea>
+      </div>
+      <section class="course-cover-editor" aria-labelledby="course-cover-title">
+        <div class="course-cover course-cover--empty" data-course-cover-preview>
+          <img alt="" data-course-cover-image hidden>
+          <div class="course-cover__placeholder">
+            <span class="eyebrow"><span class="eyebrow-mark">16:9</span> Обложка курса</span>
+            <strong id="course-cover-title">Добавьте изображение для карточек и страницы курса</strong>
+            <span>Рекомендуемый формат: 1280x720 или крупнее.</span>
+          </div>
+        </div>
+        <div class="course-cover-editor__actions">
+          <input class="visually-hidden" type="file" accept="image/*" data-course-cover-input>
+          <button class="button button-outline" type="button" data-course-cover-upload>Загрузить обложку</button>
+          <button class="button button-outline" type="button" data-course-cover-remove hidden>Удалить</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="builder-card">
+      <div class="builder-card__head">
+        <div class="builder-card__title">
+          <span class="icon-chip">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg>
+          </span>
+          <span>Структура курса</span>
+        </div>
+        <div class="builder-summary" data-structure-summary></div>
+      </div>
+      <div class="structure-list" data-structure-list></div>
+    </section>
+
+    <div class="builder-addbar" aria-label="Добавление сущностей курса">
+      <div class="builder-addbar__inner">
+        <button class="button button-outline admin-entity-button" type="button" data-add-type="lesson">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 4h8l4 4v12H7z" stroke="currentColor" stroke-linejoin="round" stroke-width="2"/><path d="M15 4v4h4" stroke="currentColor" stroke-linejoin="round" stroke-width="2"/></svg>
+          <span>Урок</span>
+        </button>
+        <button class="button button-outline admin-entity-button" type="button" data-add-type="section">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-linejoin="round" stroke-width="2"/><path d="M8 10h8" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg>
+          <span>Раздел</span>
+        </button>
+        <button class="button button-outline admin-entity-button" type="button" data-add-type="test">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 5h10l2 3v11H5V8l2-3Z" stroke="currentColor" stroke-linejoin="round" stroke-width="2"/><path d="M8 12h8M8 16h5" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg>
+          <span>Тест</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/scripts/course-store.js"></script>
+  <script src="../../assets/scripts/admin-course.js"></script>
+</body>
+</html>

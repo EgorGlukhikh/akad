@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#44474a",
+                        "tertiary-fixed": "#e1e2e6",
+                        "surface-variant": "#2f3445",
+                        "tertiary": "#c5c6ca",
+                        "primary": "#bac3ff",
+                        "surface-container-highest": "#2f3445",
+                        "surface-container-high": "#25293a",
+                        "on-primary-container": "#d6daff",
+                        "on-primary": "#001e91",
+                        "on-secondary-container": "#526400",
+                        "secondary-fixed": "#cbf21d",
+                        "on-secondary": "#2a3400",
+                        "secondary-container": "#c0e601",
+                        "on-secondary-fixed-variant": "#3e4c00",
+                        "tertiary-container": "#5e6164",
+                        "inverse-on-surface": "#2b3040",
+                        "surface": "#0e1322",
+                        "surface-container-low": "#161b2b",
+                        "background": "#0e1322",
+                        "inverse-primary": "#1643fd",
+                        "inverse-surface": "#dee1f7",
+                        "tertiary-fixed-dim": "#c5c6ca",
+                        "secondary": "#e5ff87",
+                        "outline": "#8e8fa3",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#090e1c",
+                        "on-secondary-fixed": "#171e00",
+                        "on-tertiary-fixed": "#191c1f",
+                        "on-primary-fixed": "#00105c",
+                        "surface-container": "#1a1f2f",
+                        "surface-bright": "#343949",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#002eca",
+                        "secondary-fixed-dim": "#b1d500",
+                        "outline-variant": "#444657",
+                        "primary-fixed": "#dee0ff",
+                        "on-background": "#dee1f7",
+                        "surface-dim": "#0e1322",
+                        "surface-tint": "#bac3ff",
+                        "on-surface": "#dee1f7",
+                        "on-tertiary-container": "#dbdce0",
+                        "primary-fixed-dim": "#bac3ff",
+                        "on-surface-variant": "#c4c5da",
+                        "primary-container": "#1b46ff",
+                        "on-tertiary": "#2e3134"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Work Sans"],
+                        "label": ["Newsreader"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .monolith-text {
+            letter-spacing: -0.04em;
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            background: rgba(47, 52, 69, 0.8);
+        }
+        .kinetic-easing {
+            transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .bg-cobalt-gradient {
+            background: linear-gradient(135deg, #1B46FF 0%, #0A0F1E 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary selection:text-on-secondary-fixed overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0A0F1E] backdrop-blur-xl bg-opacity-80 border-b border-white/5 shadow-[0_40px_60px_-15px_rgba(10,15,30,0.3)]">
+<div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+<div class="text-2xl font-black text-white tracking-tighter font-headline uppercase">
+                ACADEMY REALTORS
+            </div>
+<div class="hidden md:flex items-center space-x-12 font-headline tracking-tighter uppercase font-bold text-sm">
+<a class="text-white/70 hover:text-[#D7FF2F] transition-all duration-300" href="#">Курсы</a>
+<a class="text-white/70 hover:text-[#D7FF2F] transition-all duration-300" href="#">Обучение</a>
+<a class="text-white/70 hover:text-[#D7FF2F] transition-all duration-300" href="#">Ресурсы</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="font-headline tracking-tighter uppercase font-bold text-sm text-white/70 hover:text-white transition-colors">Вход</button>
+<button class="bg-primary-container text-white font-headline tracking-tighter uppercase font-bold text-sm px-6 py-2.5 scale-95 active:scale-90 transition-transform cubic-bezier(0.2,1,0.3,1)">
+                    Начать обучение
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-24 overflow-hidden min-h-screen flex items-center">
+<div class="absolute inset-0 bg-cobalt-gradient opacity-40"></div>
+<!-- Abstract Background Texture -->
+<div class="absolute -right-24 top-1/4 w-[600px] h-[600px] rounded-full bg-primary-container blur-[160px] opacity-20"></div>
+<div class="max-w-7xl mx-auto px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-6">
+<h1 class="text-6xl md:text-8xl font-black font-headline monolith-text leading-[0.9] text-white uppercase mb-6">
+                    МАСТЕРСТВО<br/>В КАЖДОЙ<br/>СДЕЛКЕ
+                </h1>
+<p class="text-2xl md:text-3xl font-label italic text-secondary leading-tight max-w-lg">
+                    Архитектура вашего профессионального роста
+                </p>
+<div class="mt-12 flex flex-col sm:flex-row gap-6">
+<button class="bg-primary-container text-white px-10 py-5 font-headline uppercase font-bold tracking-tighter text-lg transition-all hover:bg-opacity-90 active:scale-95">
+                        Открыть каталог курсов
+                    </button>
+<button class="border border-outline-variant text-white px-10 py-5 font-headline uppercase font-bold tracking-tighter text-lg hover:border-secondary hover:text-secondary transition-all">
+                        О методологии
+                    </button>
+</div>
+</div>
+<div class="lg:col-span-6 relative">
+<!-- Product UI Shell Mockup -->
+<div class="bg-surface-container-high p-1 rounded-lg shadow-2xl border border-white/5 relative group">
+<div class="bg-surface-container-lowest rounded-md overflow-hidden aspect-[4/3] relative">
+<!-- Dashboard Mockup Content -->
+<div class="p-8 h-full flex flex-col">
+<div class="flex justify-between items-center mb-8">
+<div class="h-6 w-32 bg-surface-variant rounded-sm"></div>
+<div class="flex space-x-2">
+<div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+<div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-headline font-bold text-white/50 text-xs tracking-widest uppercase">Модуль 04: Налоговое право</span>
+<span class="text-secondary font-headline font-bold text-xs uppercase">65% Завершено</span>
+</div>
+<div class="w-full h-1 bg-surface-variant">
+<div class="h-full bg-secondary w-[65%]"></div>
+</div>
+<div class="grid grid-cols-2 gap-4 pt-4">
+<div class="bg-surface-container-low p-4 space-y-2">
+<div class="h-3 w-16 bg-white/10"></div>
+<div class="h-5 w-24 bg-white/30"></div>
+</div>
+<div class="bg-surface-container-low p-4 space-y-2">
+<div class="h-3 w-16 bg-white/10"></div>
+<div class="h-5 w-24 bg-white/30"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Glass Cards -->
+<div class="absolute -top-6 -right-6 glass-panel p-4 border border-white/10 shadow-xl max-w-[200px]">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="text-xs font-headline font-bold uppercase tracking-tighter text-white">AI-анализ документов</span>
+</div>
+</div>
+<div class="absolute -bottom-8 -left-12 glass-panel p-5 border border-white/10 shadow-2xl max-w-[220px]">
+<div class="flex items-center space-x-3 mb-2">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-xs font-headline font-bold uppercase tracking-tighter text-white">Проверка чистоты</span>
+</div>
+<div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-full"></div>
+</div>
+<span class="text-[10px] text-white/40 mt-1 block uppercase">Риски не обнаружены</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Outcome Strip -->
+<section class="bg-surface-container-low py-24 relative">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Card 1 -->
+<div class="bg-surface-container-high glass-panel p-10 border border-white/5 group hover:border-secondary transition-all kinetic-easing">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6 block" data-icon="architecture">architecture</span>
+<h3 class="text-xl font-headline font-black uppercase text-white mb-4 tracking-tighter">Практическое мастерство</h3>
+<p class="text-on-surface-variant font-body leading-relaxed opacity-80">
+                        Отработка реальных кейсов от экспертов рынка с многолетним опытом в элитной недвижимости.
+                    </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-high glass-panel p-10 border border-white/5 group hover:border-primary-container transition-all kinetic-easing">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 block" data-icon="gavel">gavel</span>
+<h3 class="text-xl font-headline font-black uppercase text-white mb-4 tracking-tighter">Юридическая уверенность</h3>
+<p class="text-on-surface-variant font-body leading-relaxed opacity-80">
+                        Полный комплаенс и понимание структуры сложных трансграничных сделок и налоговых режимов.
+                    </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-high glass-panel p-10 border border-white/5 group hover:border-secondary transition-all kinetic-easing">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6 block" data-icon="speed">speed</span>
+<h3 class="text-xl font-headline font-black uppercase text-white mb-4 tracking-tighter">Ритм закрытия сделок</h3>
+<p class="text-on-surface-variant font-body leading-relaxed opacity-80">
+                        Оптимизация воронки продаж и ускорение цикла сделки за счет внедрения AI-технологий.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Program Section -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-5xl md:text-7xl font-black font-headline uppercase monolith-text leading-none text-white mb-6">
+                        ПРОГРАММА<br/>ОБУЧЕНИЯ
+                    </h2>
+<p class="text-xl font-label italic text-white/50">
+                        Инженерная точность в образовании современных брокеров
+                    </p>
+</div>
+<div class="text-right">
+<span class="text-secondary font-headline font-bold text-sm tracking-[0.2em] uppercase">Academy v.2.4</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5">
+<!-- Block 1 -->
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-colors duration-500">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-primary-container font-headline font-bold text-sm uppercase block mb-4 tracking-widest">Модуль 01</span>
+<h4 class="text-2xl font-headline font-bold text-white uppercase mb-4">Сделки в премиум-сегменте</h4>
+<ul class="space-y-3 text-on-surface-variant opacity-70">
+<li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-secondary"></div> Психология состоятельного клиента</li>
+<li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-secondary"></div> Управление ожиданиями стейкхолдеров</li>
+<li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-secondary"></div> Архитектура элитных лотов</li>
+</ul>
+</div>
+<span class="material-symbols-outlined text-white/10 text-6xl" data-icon="diamond">diamond</span>
+</div>
+</div>
+<!-- Block 2 -->
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-colors duration-500">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-primary-container font-headline font-bold text-sm uppercase block mb-4 tracking-widest">Модуль 02</span>
+<h4 class="text-2xl font-headline font-bold text-white uppercase mb-4">Налоговое планирование</h4>
+<ul class="space-y-3 text-on-surface-variant opacity-70">
+<li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-secondary"></div> Оптимизация при продаже и дарении</li>
+<li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-secondary"></div> Работа с нерезидентами</li>
+<li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-secondary"></div> КИК и международное право</li>
+</ul>
+</div>
+<span class="material-symbols-outlined text-white/10 text-6xl" data-icon="account_balance">account_balance</span>
+</div>
+</div>
+<!-- Block 3 -->
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-colors duration-500">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-primary-container font-headline font-bold text-sm uppercase block mb-4 tracking-widest">Модуль 03</span>
+<h4 class="text-2xl font-headline font-bold text-white uppercase mb-4">Юридический комплаенс</h4>
+<ul class="space-y-3 text-on-surface-variant opacity-70">
+<li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-secondary"></div> Проверка истории прав собственности</li>
+<li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-secondary"></div> Банкротные риски и субсидиарка</li>
+<li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-secondary"></div> Электронные сделки и ЭЦП</li>
+</ul>
+</div>
+<span class="material-symbols-outlined text-white/10 text-6xl" data-icon="shield">shield</span>
+</div>
+</div>
+<!-- Block 4 -->
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-colors duration-500">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-primary-container font-headline font-bold text-sm uppercase block mb-4 tracking-widest">Модуль 04</span>
+<h4 class="text-2xl font-headline font-bold text-white uppercase mb-4">AI-инструменты брокера</h4>
+<ul class="space-y-3 text-on-surface-variant opacity-70">
+<li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-secondary"></div> Промпт-инжиниринг для описаний</li>
+<li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-secondary"></div> Анализ рынка через нейросети</li>
+<li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-secondary"></div> Автоматизация коммуникаций</li>
+</ul>
+</div>
+<span class="material-symbols-outlined text-white/10 text-6xl" data-icon="neurology">neurology</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Platform Section -->
+<section class="py-32 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative order-2 lg:order-1">
+<div class="relative z-10 bg-surface shadow-2xl rounded-lg p-6 border border-white/5">
+<img alt="Professional Workspace" class="w-full h-auto rounded-sm" data-alt="abstract close-up of a modern architectural office interior with clean lines, dark steel textures, and soft cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-5w5BCDBAKo0YFPSsQOFAYnUfazYTrzlQm0Y8IMe6NTgxU4D8EWsIzjmmpPhse67ptSfxpyZLrezw8Dv-68B4QzvSCLhSL90HTsOYNuB_Ri0ltehiRX5JqX4FLclHSI5EiNCisrbcLNMw28bJ0tL4n9bNoLyJcoJUcZTppNRJDht2dN9hcU8a7ZuRcbg8AF73cCmniXeNQeX6VIW-NDOsfRy9vEsUPjCi9CTKssKRgHGxdWvSaaaMb4LGWTo8KG7Ejs45rS6hpXsN"/>
+<div class="absolute -right-12 top-1/2 -translate-y-1/2 w-48 hidden md:block">
+<div class="bg-primary-container p-6 border border-white/10 shadow-2xl">
+<span class="material-symbols-outlined text-white mb-4" data-icon="event">event</span>
+<div class="space-y-2">
+<div class="h-2 w-full bg-white/20"></div>
+<div class="h-2 w-3/4 bg-white/20"></div>
+<div class="h-2 w-1/2 bg-white/20"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -bottom-16 -left-16 w-64 h-64 border border-white/5 rounded-full flex items-center justify-center opacity-20">
+<div class="w-48 h-48 border border-white/10 rounded-full"></div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="text-5xl font-black font-headline uppercase monolith-text text-white mb-8">
+                        Ваша операционная система успеха
+                    </h2>
+<p class="text-xl font-body text-on-surface-variant opacity-80 mb-12">
+                        Мы создали не просто платформу, а цифровой контур, который сопровождает вас на каждом этапе карьеры. Доступ с любого устройства, умный календарь дедлайнов и сертификация международного образца.
+                    </p>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-2">
+<h5 class="text-secondary font-headline font-black text-3xl">24/7</h5>
+<p class="text-sm font-headline uppercase tracking-widest text-white/40">Доступ ко всем материалам</p>
+</div>
+<div class="space-y-2">
+<h5 class="text-primary font-headline font-black text-3xl">ISO</h5>
+<p class="text-sm font-headline uppercase tracking-widest text-white/40">Стандарты качества</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Metrics -->
+<section class="py-24 bg-surface border-y border-white/5">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="text-center group">
+<div class="text-5xl font-headline font-black text-white group-hover:text-secondary transition-colors">2400+</div>
+<div class="text-xs font-headline uppercase tracking-[0.2em] text-white/40 mt-4">Выпускников</div>
+</div>
+<div class="text-center group">
+<div class="text-5xl font-headline font-black text-white group-hover:text-primary transition-colors">98%</div>
+<div class="text-xs font-headline uppercase tracking-[0.2em] text-white/40 mt-4">Успешных сделок</div>
+</div>
+<div class="text-center group">
+<div class="text-5xl font-headline font-black text-white group-hover:text-secondary transition-colors">150+</div>
+<div class="text-xs font-headline uppercase tracking-[0.2em] text-white/40 mt-4">Экспертов</div>
+</div>
+<div class="text-center group">
+<div class="text-5xl font-headline font-black text-white group-hover:text-primary transition-colors">12</div>
+<div class="text-xs font-headline uppercase tracking-[0.2em] text-white/40 mt-4">Лет на рынке</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-32 bg-surface">
+<div class="max-w-4xl mx-auto px-8">
+<h2 class="text-4xl font-headline font-black uppercase text-center mb-16 text-white tracking-tighter">Часто задаваемые вопросы</h2>
+<div class="space-y-6">
+<div class="bg-surface-container-low p-8 border border-white/5 hover:border-secondary/30 transition-all">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-headline font-bold uppercase text-white tracking-tight">Подходит ли курс для новичков?</h4>
+<span class="material-symbols-outlined text-secondary" data-icon="add">add</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 border border-white/5 hover:border-secondary/30 transition-all">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-headline font-bold uppercase text-white tracking-tight">Выдаете ли вы диплом государственного образца?</h4>
+<span class="material-symbols-outlined text-secondary" data-icon="add">add</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 border border-white/5 hover:border-secondary/30 transition-all">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-headline font-bold uppercase text-white tracking-tight">Есть ли возможность рассрочки?</h4>
+<span class="material-symbols-outlined text-secondary" data-icon="add">add</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-16 px-8 border-t border-white/5 bg-[#0A0F1E]">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<span class="text-xl font-bold text-white mb-4 block font-headline uppercase tracking-tighter">ACADEMY REALTORS</span>
+<p class="font-['Work_Sans'] text-sm tracking-wide text-white/50 mb-8 max-w-xs">
+                    Кинетическая архитектура вашего успеха в недвижимости.
+                </p>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="text-white font-headline font-bold text-xs uppercase tracking-widest mb-2 opacity-30">Навигация</span>
+<a class="font-['Work_Sans'] text-sm tracking-wide text-white/40 hover:text-[#1B46FF] transition-colors" href="#">Курсы</a>
+<a class="font-['Work_Sans'] text-sm tracking-wide text-white/40 hover:text-[#1B46FF] transition-colors" href="#">Обучение</a>
+<a class="font-['Work_Sans'] text-sm tracking-wide text-white/40 hover:text-[#1B46FF] transition-colors" href="#">Ресурсы</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="text-white font-headline font-bold text-xs uppercase tracking-widest mb-2 opacity-30">Юридическая информация</span>
+<a class="font-['Work_Sans'] text-sm tracking-wide text-white/40 hover:text-[#1B46FF] transition-colors" href="#">Политика конфиденциальности</a>
+<a class="font-['Work_Sans'] text-sm tracking-wide text-white/40 hover:text-[#1B46FF] transition-colors" href="#">Условия использования</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="text-white font-headline font-bold text-xs uppercase tracking-widest mb-2 opacity-30">Компания</span>
+<a class="font-['Work_Sans'] text-sm tracking-wide text-white/40 hover:text-[#1B46FF] transition-colors" href="#">О нас</a>
+<a class="font-['Work_Sans'] text-sm tracking-wide text-white/40 hover:text-[#1B46FF] transition-colors" href="#">Контакты</a>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-center">
+<p class="font-['Work_Sans'] text-xs tracking-wide text-white/50">
+                © 2024 ACADEMY REALTORS. Все права защищены. Kinetic Architectural Authority.
+            </p>
+</div>
+</footer>
+</body></html>

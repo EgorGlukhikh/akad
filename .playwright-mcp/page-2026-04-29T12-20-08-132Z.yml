@@ -1,0 +1,38 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Академия риэлторов" [ref=e5] [cursor=pointer]:
+          - /url: ../index.html
+          - generic [ref=e6]: АР
+          - generic [ref=e7]:
+            - strong [ref=e8]: Академия
+            - generic [ref=e9]: риэлторов
+        - navigation "Навигация портала" [ref=e10]:
+          - link "Лендинг" [ref=e11] [cursor=pointer]:
+            - /url: ../index.html
+          - generic [ref=e12]: /
+          - generic [ref=e13]: Портал ученика
+      - link "Выйти" [ref=e15] [cursor=pointer]:
+        - /url: ../auth/index.html
+  - main [ref=e16]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - generic [ref=e20]: "01"
+          - text: Обучение
+        - heading "Мои курсы" [level=1] [ref=e21]
+      - paragraph [ref=e22]: Здесь видны доступные курсы, общий прогресс и быстрый переход к обучению.
+    - article [ref=e25]:
+      - img "Обложка базового курса риэлтора" [ref=e27]
+      - generic [ref=e28]:
+        - generic [ref=e29]: Доступ открыт
+        - generic [ref=e30]: 0 из 28 обязательных
+      - generic [ref=e31]:
+        - heading "Базовый курс риэлтора" [level=2] [ref=e32]
+        - paragraph [ref=e33]: "28 уроков для старта в профессии: клиенты, встречи, возражения, договоры, аналитика, маркетинг и организация работы."
+      - generic [ref=e35]:
+        - generic [ref=e36]: 1 раздел
+        - generic [ref=e37]: 28 уроков
+        - generic [ref=e38]: 0 тестов
+      - button "Открыть курс" [ref=e40] [cursor=pointer]

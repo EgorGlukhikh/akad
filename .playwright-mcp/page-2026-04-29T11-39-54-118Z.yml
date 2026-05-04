@@ -1,0 +1,194 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Академия риэлторов" [ref=e5] [cursor=pointer]:
+          - /url: ../../index.html
+          - generic [ref=e6]: АР
+          - generic [ref=e7]:
+            - strong [ref=e8]: Академия
+            - generic [ref=e9]: риэлторов
+        - navigation "Навигация админки" [ref=e10]:
+          - link "Создание курса" [ref=e11] [cursor=pointer]:
+            - /url: ../course/index.html
+          - generic [ref=e12]: /
+          - generic [ref=e13]: Урок 1
+      - generic [ref=e14]:
+        - button "Предпросмотр" [ref=e15] [cursor=pointer]
+        - button "Сохранить" [ref=e16] [cursor=pointer]
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: "#1 из 2"
+          - generic [ref=e22]: /
+          - generic [ref=e23]: Раздел 1
+        - textbox [ref=e24]: Урок 1
+      - generic [ref=e25]:
+        - generic "Палитра блоков урока" [ref=e27]:
+          - button "Текст" [active] [ref=e28] [cursor=pointer]:
+            - img [ref=e29]
+            - generic [ref=e31]: Текст
+          - button "Фото" [ref=e32] [cursor=pointer]:
+            - img [ref=e33]
+            - generic [ref=e37]: Фото
+          - button "Видео" [ref=e38] [cursor=pointer]:
+            - img [ref=e39]
+            - generic [ref=e42]: Видео
+          - button "Тест" [disabled] [ref=e43] [cursor=pointer]:
+            - img [ref=e44]
+            - generic [ref=e47]: Тест
+        - generic [ref=e49]:
+          - strong [ref=e50]: Начните собирать урок
+          - generic [ref=e51]: Добавьте текст, фото или видео. Тесты добавляются отдельными пунктами в структуре курса.
+        - generic [ref=e52]:
+          - article [ref=e199]:
+            - generic [ref=e200]:
+              - generic [ref=e201]:
+                - img [ref=e202]
+                - generic [ref=e204]: Текстовый блок
+              - generic [ref=e205]:
+                - generic [ref=e206]: Редактор
+                - button "Удалить блок" [ref=e207] [cursor=pointer]:
+                  - img [ref=e208]
+            - generic [ref=e210]:
+              - generic "Панель форматирования текста" [ref=e211]:
+                - button "Жирный" [ref=e212] [cursor=pointer]: B
+                - button "Курсив" [ref=e213] [cursor=pointer]: I
+                - button "Подчеркнуть" [ref=e214] [cursor=pointer]: U
+                - button "Зачеркнуть" [ref=e215] [cursor=pointer]: S
+                - button "Заголовок H1" [ref=e216] [cursor=pointer]: H1
+                - button "Заголовок H2" [ref=e217] [cursor=pointer]: H2
+                - button "Заголовок H3" [ref=e218] [cursor=pointer]: H3
+                - button "Обычный текст" [ref=e219] [cursor=pointer]: ¶
+                - button "Маркированный список" [ref=e220] [cursor=pointer]: •
+                - button "Нумерованный список" [ref=e221] [cursor=pointer]: "1."
+                - button "Цитата" [ref=e222] [cursor=pointer]: “”
+                - button "Код" [ref=e223] [cursor=pointer]: </>
+                - button "Гиперссылка" [ref=e224] [cursor=pointer]: ↗
+                - button "Отменить" [ref=e226] [cursor=pointer]: ↶
+                - button "Повторить" [ref=e227] [cursor=pointer]: ↷
+              - heading "Проверка редактора текста." [level=3] [ref=e229]
+          - article [ref=e230]:
+            - generic [ref=e231]:
+              - generic [ref=e232]:
+                - img [ref=e233]
+                - generic [ref=e235]: Текстовый блок
+              - generic [ref=e236]:
+                - generic [ref=e237]: Редактор
+                - button "Удалить блок" [ref=e238] [cursor=pointer]:
+                  - img [ref=e239]
+            - generic [ref=e241]:
+              - generic "Панель форматирования текста" [ref=e242]:
+                - button "Жирный" [ref=e243] [cursor=pointer]: B
+                - button "Курсив" [ref=e244] [cursor=pointer]: I
+                - button "Подчеркнуть" [ref=e245] [cursor=pointer]: U
+                - button "Зачеркнуть" [ref=e246] [cursor=pointer]: S
+                - button "Заголовок H1" [ref=e247] [cursor=pointer]: H1
+                - button "Заголовок H2" [ref=e248] [cursor=pointer]: H2
+                - button "Заголовок H3" [ref=e249] [cursor=pointer]: H3
+                - button "Обычный текст" [ref=e250] [cursor=pointer]: ¶
+                - button "Маркированный список" [ref=e251] [cursor=pointer]: •
+                - button "Нумерованный список" [ref=e252] [cursor=pointer]: "1."
+                - button "Цитата" [ref=e253] [cursor=pointer]: “”
+                - button "Код" [ref=e254] [cursor=pointer]: </>
+                - button "Гиперссылка" [ref=e255] [cursor=pointer]: ↗
+                - button "Отменить" [ref=e257] [cursor=pointer]: ↶
+                - button "Повторить" [ref=e258] [cursor=pointer]: ↷
+              - generic [ref=e259]:
+                - paragraph [ref=e260]: Этот блок помогает раскрыть тему урока. Здесь можно вставить вводный текст, основные мысли и короткие пояснения.
+                - paragraph [ref=e261]: Текст сохраняется как контент урока и потом выводится на странице ученика.
+          - article [ref=e262]:
+            - generic [ref=e263]:
+              - generic [ref=e264]:
+                - img [ref=e265]
+                - generic [ref=e267]: Текстовый блок
+              - generic [ref=e268]:
+                - generic [ref=e269]: Редактор
+                - button "Удалить блок" [ref=e270] [cursor=pointer]:
+                  - img [ref=e271]
+            - generic [ref=e273]:
+              - generic "Панель форматирования текста" [ref=e274]:
+                - button "Жирный" [ref=e275] [cursor=pointer]: B
+                - button "Курсив" [ref=e276] [cursor=pointer]: I
+                - button "Подчеркнуть" [ref=e277] [cursor=pointer]: U
+                - button "Зачеркнуть" [ref=e278] [cursor=pointer]: S
+                - button "Заголовок H1" [ref=e279] [cursor=pointer]: H1
+                - button "Заголовок H2" [ref=e280] [cursor=pointer]: H2
+                - button "Заголовок H3" [ref=e281] [cursor=pointer]: H3
+                - button "Обычный текст" [ref=e282] [cursor=pointer]: ¶
+                - button "Маркированный список" [ref=e283] [cursor=pointer]: •
+                - button "Нумерованный список" [ref=e284] [cursor=pointer]: "1."
+                - button "Цитата" [ref=e285] [cursor=pointer]: “”
+                - button "Код" [ref=e286] [cursor=pointer]: </>
+                - button "Гиперссылка" [ref=e287] [cursor=pointer]: ↗
+                - button "Отменить" [ref=e289] [cursor=pointer]: ↶
+                - button "Повторить" [ref=e290] [cursor=pointer]: ↷
+              - heading "Тестовый текст урока для проверки сохранения." [level=2] [ref=e292]
+          - article [ref=e293]:
+            - generic [ref=e294]:
+              - generic [ref=e295]:
+                - img [ref=e296]
+                - generic [ref=e299]: Видео
+              - button "Удалить блок" [ref=e301] [cursor=pointer]:
+                - img [ref=e302]
+            - generic [ref=e304]:
+              - generic [ref=e305]: Видео доступно только ссылкой Rutube. Файлы не сохраняем в base64.
+              - generic [ref=e307]:
+                - generic [ref=e308]: Ссылка на Rutube
+                - textbox "Ссылка на Rutube" [ref=e310]:
+                  - /placeholder: https://rutube.ru/...
+                  - text: https://rutube.ru/video/demo
+              - generic [ref=e311]: "Ссылка сохранена: https://rutube.ru/video/demo"
+          - article [ref=e312]:
+            - generic [ref=e313]:
+              - generic [ref=e314]:
+                - img [ref=e315]
+                - generic [ref=e318]: Тест
+              - button "Удалить блок" [ref=e320] [cursor=pointer]:
+                - img [ref=e321]
+            - generic [ref=e323]:
+              - strong [ref=e324]: Тест внутри урока
+              - paragraph [ref=e325]: Блок теста внутри урока временно недоступен. Добавьте тест отдельным пунктом в структуре курса.
+          - article [ref=e326]:
+            - generic [ref=e327]:
+              - generic [ref=e328]:
+                - img [ref=e329]
+                - generic [ref=e333]: Фото
+              - button "Удалить блок" [ref=e335] [cursor=pointer]:
+                - img [ref=e336]
+            - generic [ref=e338]:
+              - strong [ref=e339]: Загрузите изображение для урока
+              - generic [ref=e340]: Поддерживается локальный файл. После загрузки картинка появится внутри урока.
+              - generic [ref=e341] [cursor=pointer]: Выбрать файл
+              - button "Выбрать файл" [ref=e342]
+            - img "orb-ring-cyan.png" [ref=e344]
+          - article [ref=e345]:
+            - generic [ref=e346]:
+              - generic [ref=e347]:
+                - img [ref=e348]
+                - generic [ref=e350]: Текстовый блок
+              - generic [ref=e351]:
+                - generic [ref=e352]: Редактор
+                - button "Удалить блок" [ref=e353] [cursor=pointer]:
+                  - img [ref=e354]
+            - generic [ref=e356]:
+              - generic "Панель форматирования текста" [ref=e357]:
+                - button "Жирный" [ref=e358] [cursor=pointer]: B
+                - button "Курсив" [ref=e359] [cursor=pointer]: I
+                - button "Подчеркнуть" [ref=e360] [cursor=pointer]: U
+                - button "Зачеркнуть" [ref=e361] [cursor=pointer]: S
+                - button "Заголовок H1" [ref=e362] [cursor=pointer]: H1
+                - button "Заголовок H2" [ref=e363] [cursor=pointer]: H2
+                - button "Заголовок H3" [ref=e364] [cursor=pointer]: H3
+                - button "Обычный текст" [ref=e365] [cursor=pointer]: ¶
+                - button "Маркированный список" [ref=e366] [cursor=pointer]: •
+                - button "Нумерованный список" [ref=e367] [cursor=pointer]: "1."
+                - button "Цитата" [ref=e368] [cursor=pointer]: “”
+                - button "Код" [ref=e369] [cursor=pointer]: </>
+                - button "Гиперссылка" [ref=e370] [cursor=pointer]: ↗
+                - button "Отменить" [ref=e372] [cursor=pointer]: ↶
+                - button "Повторить" [ref=e373] [cursor=pointer]: ↷
+              - generic [ref=e374]:
+                - paragraph [ref=e375]: Этот блок помогает раскрыть тему урока. Здесь можно вставить вводный текст, основные мысли и короткие пояснения.
+                - paragraph [ref=e376]: Текст сохраняется как контент урока и потом выводится на странице ученика.

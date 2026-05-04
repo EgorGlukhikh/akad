@@ -1,0 +1,63 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Академия риэлторов" [ref=e5] [cursor=pointer]:
+          - /url: ../../index.html
+          - generic [ref=e6]: АР
+          - generic [ref=e7]:
+            - strong [ref=e8]: Академия
+            - generic [ref=e9]: риэлторов
+        - navigation "Навигация админки" [ref=e10]:
+          - link "Лендинг" [ref=e11] [cursor=pointer]:
+            - /url: ../../index.html
+          - generic [ref=e12]: /
+          - generic [ref=e13]: Курсы
+      - generic [ref=e14]:
+        - link "Портал ученика" [ref=e15] [cursor=pointer]:
+          - /url: ../../student/index.html
+        - button "Экспорт JSON" [ref=e16] [cursor=pointer]
+        - button "Импорт JSON" [ref=e17] [cursor=pointer]
+        - button "Восстановить базовый курс" [ref=e18] [cursor=pointer]
+        - button "Choose File" [ref=e19]
+        - button "Создать курс" [ref=e20] [cursor=pointer]
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - generic [ref=e25]: "00"
+          - text: Админка
+        - heading "Курсы академии" [level=1] [ref=e26]
+      - paragraph [ref=e27]: "Здесь лежат курсы академии: их можно редактировать, публиковать и смотреть глазами ученика."
+    - generic [ref=e29]:
+      - article [ref=e30]:
+        - img "Обложка базового курса риэлтора" [ref=e32]
+        - generic [ref=e33]:
+          - generic [ref=e34]: Опубликован
+          - generic [ref=e35]: Изменён 29 апреля в 15:38
+        - generic [ref=e36]:
+          - heading "Базовый курс риэлтора" [level=2] [ref=e37]
+          - paragraph [ref=e38]: "28 уроков для старта в профессии: клиенты, встречи, возражения, договоры, аналитика, маркетинг и организация работы."
+        - generic [ref=e39]:
+          - generic [ref=e40]: 1 раздел
+          - generic [ref=e41]: 28 уроков
+          - generic [ref=e42]: 0 тестов
+        - generic [ref=e43]:
+          - button "Редактировать" [ref=e44] [cursor=pointer]
+          - button "Предпросмотр" [ref=e45] [cursor=pointer]
+          - button "Удалить" [ref=e46] [cursor=pointer]
+      - article [ref=e47]:
+        - generic [ref=e48]:
+          - generic [ref=e49]: Черновик
+          - generic [ref=e50]: Изменён 29 апреля в 15:39
+        - generic [ref=e51]:
+          - heading "Новый курс" [level=2] [ref=e52]
+          - paragraph [ref=e53]: Добавьте описание курса в редакторе.
+        - generic [ref=e54]:
+          - generic [ref=e55]: 1 раздел
+          - generic [ref=e56]: 1 урок
+          - generic [ref=e57]: 0 тестов
+        - generic [ref=e58]:
+          - button "Редактировать" [ref=e59] [cursor=pointer]
+          - button "Предпросмотр" [ref=e60] [cursor=pointer]
+          - button "Удалить" [ref=e61] [cursor=pointer]

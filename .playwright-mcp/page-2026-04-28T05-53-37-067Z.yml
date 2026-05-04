@@ -1,0 +1,70 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Академия риэлторов" [ref=e5] [cursor=pointer]:
+          - /url: ../../index.html
+          - generic [ref=e6]: АР
+          - generic [ref=e7]:
+            - strong [ref=e8]: Академия
+            - generic [ref=e9]: риэлторов
+        - navigation "Навигация админки" [ref=e10]:
+          - link "Создание курса" [ref=e11] [cursor=pointer]:
+            - /url: ../course/index.html
+          - generic [ref=e12]: /
+          - generic [ref=e13]: Урок 1
+      - generic [ref=e14]:
+        - button "Предпросмотр" [ref=e15] [cursor=pointer]
+        - button "Сохранено" [active] [ref=e85] [cursor=pointer]
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: "#1 из 2"
+          - generic [ref=e22]: /
+          - generic [ref=e23]: Раздел 1
+        - textbox [ref=e24]: Урок 1
+      - generic [ref=e25]:
+        - generic "Палитра блоков урока" [ref=e27]:
+          - button "Текст" [ref=e28] [cursor=pointer]:
+            - img [ref=e29]
+            - generic [ref=e31]: Текст
+          - button "Фото" [ref=e32] [cursor=pointer]:
+            - img [ref=e33]
+            - generic [ref=e37]: Фото
+          - button "Видео" [ref=e38] [cursor=pointer]:
+            - img [ref=e39]
+            - generic [ref=e42]: Видео
+          - button "Тест" [ref=e43] [cursor=pointer]:
+            - img [ref=e44]
+            - generic [ref=e47]: Тест
+        - generic [ref=e49]:
+          - strong [ref=e50]: Начните собирать урок
+          - generic [ref=e51]: Добавьте текст, фото, видео или тест. Блоки будут появляться прямо на полотне урока.
+        - article [ref=e53]:
+          - generic [ref=e54]:
+            - generic [ref=e55]:
+              - img [ref=e56]
+              - generic [ref=e58]: Текстовый блок
+            - generic [ref=e59]:
+              - generic [ref=e60]: Редактор
+              - button "Удалить блок" [ref=e61] [cursor=pointer]:
+                - img [ref=e62]
+          - generic [ref=e64]:
+            - generic "Панель форматирования текста" [ref=e65]:
+              - button "Жирный" [ref=e66] [cursor=pointer]: B
+              - button "Курсив" [ref=e67] [cursor=pointer]: I
+              - button "Подчеркнуть" [ref=e68] [cursor=pointer]: U
+              - button "Зачеркнуть" [ref=e69] [cursor=pointer]: S
+              - button "Заголовок H1" [ref=e70] [cursor=pointer]: H1
+              - button "Заголовок H2" [ref=e71] [cursor=pointer]: H2
+              - button "Заголовок H3" [ref=e72] [cursor=pointer]: H3
+              - button "Обычный текст" [ref=e73] [cursor=pointer]: ¶
+              - button "Маркированный список" [ref=e74] [cursor=pointer]: •
+              - button "Нумерованный список" [ref=e75] [cursor=pointer]: "1."
+              - button "Цитата" [ref=e76] [cursor=pointer]: “”
+              - button "Код" [ref=e77] [cursor=pointer]: </>
+              - button "Гиперссылка" [ref=e78] [cursor=pointer]: ↗
+              - button "Отменить" [ref=e80] [cursor=pointer]: ↶
+              - button "Повторить" [ref=e81] [cursor=pointer]: ↷
+            - heading "Проверка редактора текста." [level=3] [ref=e84]

@@ -1,0 +1,43 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Академия риэлторов" [ref=e5] [cursor=pointer]:
+          - /url: ../../index.html
+          - generic [ref=e6]: АР
+          - generic [ref=e7]:
+            - strong [ref=e8]: Академия
+            - generic [ref=e9]: риэлторов
+        - navigation "Навигация админки" [ref=e10]:
+          - link "Создание курса" [ref=e11] [cursor=pointer]:
+            - /url: ../course/
+          - generic [ref=e12]: /
+          - generic [ref=e13]: Урок
+      - generic [ref=e14]:
+        - button "Предпросмотр" [ref=e15] [cursor=pointer]
+        - button "Сохранить" [ref=e16] [cursor=pointer]
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: "#1 из 2"
+          - generic [ref=e22]: /
+          - generic [ref=e23]: Раздел
+        - textbox [ref=e24]: Урок
+      - generic [ref=e25]:
+        - generic "Палитра блоков урока" [ref=e27]:
+          - button "Текст" [ref=e28] [cursor=pointer]:
+            - img [ref=e29]
+            - generic [ref=e31]: Текст
+          - button "Фото" [ref=e32] [cursor=pointer]:
+            - img [ref=e33]
+            - generic [ref=e37]: Фото
+          - button "Видео" [ref=e38] [cursor=pointer]:
+            - img [ref=e39]
+            - generic [ref=e42]: Видео
+          - button "Тест" [ref=e43] [cursor=pointer]:
+            - img [ref=e44]
+            - generic [ref=e47]: Тест
+        - generic [ref=e49]:
+          - strong [ref=e50]: Начните собирать урок
+          - generic [ref=e51]: Добавьте текст, фото, видео или тест. Блоки будут появляться прямо на полотне урока.

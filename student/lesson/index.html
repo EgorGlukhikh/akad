@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок — Academy Realtors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/styles/system.css">
+  <link rel="stylesheet" href="../../assets/styles/admin.css">
+</head>
+<body class="admin-page" data-grid="light">
+  <header class="admin-topbar">
+    <div class="admin-shell admin-topbar__inner">
+      <div class="admin-topbar__meta">
+        <a class="brand" href="../../index.html" aria-label="Академия риэлторов">
+          <span class="brand-mark">АР</span>
+          <span class="brand-copy"><strong>Академия</strong><span>риэлторов</span></span>
+        </a>
+        <nav class="admin-breadcrumbs" aria-label="Навигация урока">
+          <a href="../index.html">Мои курсы</a>
+          <span>/</span>
+          <a href="../course/index.html">Курс</a>
+          <span>/</span>
+          <span class="admin-breadcrumbs__current" data-lesson-breadcrumb>Урок</span>
+        </nav>
+      </div>
+      <div class="admin-actions">
+        <button class="button button-dark" type="button" data-complete-lesson>Завершить урок</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-shell builder-layout">
+    <section class="lesson-stage">
+      <div class="lesson-stage__head">
+        <div class="lesson-stage__meta">
+          <span class="lesson-step">Урок</span>
+          <span data-lesson-section>Курс</span>
+        </div>
+        <h1 class="lesson-view-title" data-lesson-title>Урок</h1>
+      </div>
+      <div class="lesson-canvas student-content" data-lesson-content></div>
+    </section>
+  </main>
+
+  <script src="../../assets/scripts/course-store.js"></script>
+  <script src="../../assets/scripts/student-lesson.js"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+{"logTime": "0411/203215", "correlationVector":"DQ7j5nc5e83R6fR3fmIn06.1","action":"SyncServerConnectionManagerRequest", "result":"SYNC_SERVER_OK", "context":{"environment":"Prod_eastus2_prod-s01-050-nam-eastus2", "migrationStage":"NotStarted", "server":"akswtt11200001w"}}
+{"logTime": "0411/203215", "correlationVector":"DQ7j5nc5e83R6fR3fmIn06.2","action":"ProcessGetUpdates", "result":"Done", "context":{"dataType":"Encryption Keys", "deleted":"0", "process_failed_to_decrypt":"0", "process_pending_decryption":"0", "process_success":"1", "total":"1"}}
+{"logTime": "0411/203216", "correlationVector":"","action":"SyncServerConnectionManagerRequest", "result":"CONNECTION_UNAVAILABLE", "context":{"error_type":"net_error_code", "error_value":"-3"}}

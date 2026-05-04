@@ -1,0 +1,48 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Академия риэлторов" [ref=e5] [cursor=pointer]:
+          - /url: ../../index.html
+          - generic [ref=e6]: АР
+          - generic [ref=e7]:
+            - strong [ref=e8]: Академия
+            - generic [ref=e9]: риэлторов
+        - navigation "Навигация курса" [ref=e10]:
+          - link "Мои курсы" [ref=e11] [cursor=pointer]:
+            - /url: ../index.html
+          - generic [ref=e12]: /
+          - generic [ref=e13]: Новый курс
+      - link "Админка" [ref=e15] [cursor=pointer]:
+        - /url: ../../admin/courses/index.html
+  - main [ref=e16]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - generic [ref=e20]: "02"
+          - text: Структура курса
+        - heading "Новый курс" [level=1] [ref=e21]
+        - paragraph [ref=e22]: Описание курса появится после заполнения программы.
+      - complementary [ref=e23]:
+        - generic [ref=e24]: Прогресс
+        - strong [ref=e25]: 0%
+        - generic [ref=e26]: 0 из 1 обязательных элементов
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - img [ref=e32]
+          - generic [ref=e34]: Содержание
+        - generic [ref=e35]: 1 раздел · 1 урок · 0 тестов
+      - article [ref=e37]:
+        - generic [ref=e39]:
+          - img [ref=e41]
+          - generic [ref=e43]:
+            - strong [ref=e44]: Раздел 1
+            - generic [ref=e45]: обязательный
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - img [ref=e50]
+            - generic [ref=e53]:
+              - strong [ref=e54]: Урок 1
+              - generic [ref=e55]: обязательный
+          - button "Открыть" [ref=e56] [cursor=pointer]
